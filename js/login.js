@@ -1,5 +1,3 @@
-/* This is a JavaScript file for login */
-
 (function($) {
     "use strict";
 	
