@@ -1,4 +1,5 @@
 <!-- Where all the magic happens -->
+<?php $title="Login to Inventory"; ?>
 <?php require_once 'layout/header.php'; ?>
 <!-- LOGIN FORM -->
 <div class="text-center" style="padding:50px 0">
