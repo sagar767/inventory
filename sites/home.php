@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>Bootstrap 3 Control Panel</title>
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
-	</head>
-	<body>
+<?php $title="Home - Inventory"; ?>
+<?php require_once("../layout/header.php");?>
+
 <!-- Header -->
 <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
   <div class="container">
@@ -28,9 +16,9 @@
         <li class="dropdown">
           <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
             <i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
-          <ul id="g-account-menu" class="dropdown-menu" role="menu">
-            <li><a href="#">My Profile</a></li>
-            <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="asd.php">My Profile</a></li>
+            <li><a href="../logout.php"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -342,12 +330,4 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dalog -->
 </div><!-- /.modal -->
-
-
-
-  
-	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	</body>
-</html>
+<?php require_once("../layout/footer.php"); ?>
