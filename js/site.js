@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	
-/*Product Registration Process*/	
+
+	/*Product Registration Process*/
 	var navListItems = $('div.setup-panel div a'),
 	    allWells = $('.setup-content'),
 	    allNextBtn = $('.nextBtn');
@@ -42,8 +42,7 @@ $(document).ready(function() {
 
 	$('div.setup-panel div a.btn-danger').trigger('click');
 
-
-/*Product Upload button related*/
+	/*Product Upload button related*/
 	$.uploadPreview({
 		input_field : "#image-upload", // Default: .image-upload
 		preview_box : "#image-preview", // Default: .image-preview
@@ -52,4 +51,4 @@ $(document).ready(function() {
 		label_selected : "Change File", // Default: Change File
 		no_label : true // Default: false
 	});
-}); 
+});

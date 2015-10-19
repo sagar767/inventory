@@ -13,7 +13,7 @@
         
         <li class="dropdown">
           <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-            <i class="glyphicon glyphicon-user"></i> <?php echo $username; ?> <span class="caret"></span></a>
+            <i class="glyphicon glyphicon-user"></i> hola, <?php echo $username; ?> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">My Profile</a></li>
             <li><a href="../logout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>

@@ -66,19 +66,19 @@ require_once ("layout/primary-nav.php");
 												<textarea required="required" class="form-control" placeholder="Enter your address" ></textarea>
 											</div>
 											<div class="form-group">
-												<label class="control-label">Product Image</label>
-												<div id="image-preview">
-													<label for="image-upload" id="image-label">Upload Identity</label>
-													<input type="file" name="image" id="image-upload" />
-												</div>
-											</div>
-											<div class="form-group">
 												<label class="control-label">Product Category</label>
 												<select class="form-control" id="sel1">
 													<option>Home Appliance</option>
 													<option>Mobile</option>
 													<option>Grocery</option>
 												</select>
+											</div>
+											<div class="form-group">
+												<label class="control-label">Product Image</label>
+												<div id="image-preview">
+													<label for="image-upload" id="image-label">Upload Identity</label>
+													<input type="file" name="image" id="image-upload" />
+												</div>
 											</div>
 											<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >
 												Next
