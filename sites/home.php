@@ -1,11 +1,6 @@
-<?php $title = "Home - Inventory"; ?>
-
-<?php
-	require_once ("layout/header.php");
-?>
-
-<?php
-	require_once ("layout/primary-nav.php");
+<?php $title = "Home - Inventory";
+require_once ("layout/header.php");
+require_once ("layout/primary-nav.php");
 ?>
 
 <div class="container">
@@ -13,7 +8,7 @@
 	<div class="row">
 
 		<?php
-	require_once ("layout/sidebar-nav.php");
+		require_once ("layout/sidebar-nav.php");
 		?>
 
 		<div class="col-sm-9">
@@ -61,7 +56,7 @@
 
 				<!--center-right-->
 				<?php
-					require_once ("layout/sub-nav.php");
+				require_once ("layout/sub-nav.php");
 				?>
 			</div><!--/row-->
 		</div><!--/col-span-9-->
@@ -70,5 +65,5 @@
 </div>
 
 <?php
-	require_once ("layout/footer.php");
+require_once ("layout/footer.php");
 ?>

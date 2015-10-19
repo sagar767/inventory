@@ -1,9 +1,6 @@
-<?php $title = "Home - Inventory"; 
-
+<?php $title = "Product Registration";
 require_once ("layout/header.php");
-
 require_once ("layout/primary-nav.php");
-
 ?>
 
 <div class="container">
@@ -51,14 +48,14 @@ require_once ("layout/primary-nav.php");
 									</div>
 								</div>
 							</div>
-							<form role="form" action="" method="post">
+							<form role="form" action="" method="post" id="productRegistration">
 								<div class="row setup-content" id="step-1">
 									<div class="col-xs-9 col-md-offset-1">
 										<div class="col-md-12">
 											<h3> Step 1</h3>
 											<div class="form-group">
 												<label class="control-label">Product SKU</label>
-												<input  maxlength="100" disabled type="text" value="<?php echo "PDI".mt_rand(); ?>" required="required" class="form-control" placeholder="Enter First Name"  />
+												<input  maxlength="100" disabled type="text" value="<?php echo "PDI" . mt_rand(); ?>" required="required" class="form-control" placeholder="Enter First Name"  />
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Name</label>
@@ -69,13 +66,19 @@ require_once ("layout/primary-nav.php");
 												<textarea required="required" class="form-control" placeholder="Enter your address" ></textarea>
 											</div>
 											<div class="form-group">
+												<label class="control-label">Product Image</label>
+												<div id="image-preview">
+													<label for="image-upload" id="image-label">Upload Identity</label>
+													<input type="file" name="image" id="image-upload" />
+												</div>
+											</div>
+											<div class="form-group">
 												<label class="control-label">Product Category</label>
-												<label for="sel1">Select list:</label>
-												  <select class="form-control" id="sel1">
-												    <option>Home Appliance</option>
-												    <option>Mobile</option>
-												    <option>Grocery</option>
-												  </select>
+												<select class="form-control" id="sel1">
+													<option>Home Appliance</option>
+													<option>Mobile</option>
+													<option>Grocery</option>
+												</select>
 											</div>
 											<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >
 												Next
