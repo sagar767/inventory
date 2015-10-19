@@ -1,4 +1,5 @@
 <!-- Header -->
+<?php require_once ("session.php"); ?>
 <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
   <div class="container">
     <div class="navbar-header">
@@ -12,9 +13,9 @@
         
         <li class="dropdown">
           <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
-            <i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
+            <i class="glyphicon glyphicon-user"></i> <?php echo $username; ?> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="asd.php">My Profile</a></li>
+            <li><a href="#">My Profile</a></li>
             <li><a href="../logout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
           </ul>
         </li>

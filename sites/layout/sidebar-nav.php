@@ -4,13 +4,9 @@
       <hr>
       
       <ul class="nav nav-stacked">
-        <li><a href="javascript:;"><i class="glyphicon glyphicon-flash"></i> Alerts</a></li>
-        <li><a href="javascript:;"><i class="glyphicon glyphicon-link"></i> Links</a></li>
-        <li><a href="javascript:;"><i class="glyphicon glyphicon-list-alt"></i> Reports</a></li>
-        <li><a href="javascript:;"><i class="glyphicon glyphicon-book"></i> Books</a></li>
-        <li><a href="javascript:;"><i class="glyphicon glyphicon-briefcase"></i> Tools</a></li>
-        <li><a href="javascript:;"><i class="glyphicon glyphicon-time"></i> Real-time</a></li>
-        <li><a href="javascript:;"><i class="glyphicon glyphicon-plus"></i> Advanced..</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-list-alt"></i> View Reports</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-user"></i> View Delears</a></li>
+        <li><a href="javascript:;"><i class="glyphicon glyphicon-barcode"></i> VIew Products</a></li>
       </ul>
       
       <hr>
