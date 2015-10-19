@@ -20,13 +20,16 @@ include "db-fetch/query.php"
 			<div class="row">
 				<!-- center left-->
 				<div class="col-md-12">
-
+					<?php if($_SESSION['upload_message'] == 1){ ?>
+					<div class="status alert alert-success">
+						Product Successfully Created/Registered.
+					</div>
+					<?php } ?>
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4>Complete Product Form Entry</h4>
 						</div>
 						<div class="panel-body">
-
 							<div class="stepwizard col-md-offset-1">
 								<div class="stepwizard-row setup-panel">
 									<div class="stepwizard-step">
@@ -49,36 +52,36 @@ include "db-fetch/query.php"
 									</div>
 								</div>
 							</div>
-							<form role="form" action="" method="post" id="productRegistration">
+							<form action="" method="post" enctype="multipart/form-data" name="productRegistration">
 								<div class="row setup-content" id="step-1">
 									<div class="col-xs-9 col-md-offset-1">
 										<div class="col-md-12">
 											<h3> Step 1</h3>
 											<div class="form-group">
 												<label class="control-label">Product SKU</label>
-												<input  maxlength="100" disabled type="text" value="<?php echo "PDI" . mt_rand(); ?>" required="required" class="form-control" placeholder="Enter First Name"  />
+												<input name="product_sku" maxlength="100" readonly type="text" value="<?php echo "PDI" . mt_rand(); ?>" required="required" class="form-control" placeholder="Enter First Name"  />
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Name</label>
-												<input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
+												<input name="product_name" maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Details</label>
-												<textarea required="required" class="form-control" placeholder="Enter your address" ></textarea>
+												<textarea name="product_details" required="required" class="form-control" placeholder="Enter your address" ></textarea>
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Category</label>
-												<select class="form-control" id="sel1">
-													<option>Home Appliance</option>
-													<option>Mobile</option>
-													<option>Grocery</option>
+												<select class="form-control" name="product_category">
+													<option value="Home Appliance">Home Appliance</option>
+													<option value="Mobile">Mobile</option>
+													<option value="Grocery">Grocery</option>
 												</select>
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Image</label>
 												<div id="image-preview">
 													<label for="image-upload" id="image-label">Upload Identity</label>
-													<input type="file" name="image" id="image-upload" />
+													<input type="file" name="productImage" id="image-upload" />
 												</div>
 											</div>
 											<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >
@@ -93,15 +96,15 @@ include "db-fetch/query.php"
 											<h3> Step 2</h3>
 											<div class="form-group">
 												<label class="control-label">Product Quantity(s)</label>
-												<input maxlength="200" type="number" required="required" class="form-control" placeholder="Enter Quantity" />
+												<input name="product_quantity" maxlength="200" type="number" required="required" class="form-control" placeholder="Enter Quantity" />
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Buying Price</label>
-												<input maxlength="200" type="number" required="required" class="form-control" placeholder="Enter Buying Price" />
+												<input name="product_buying_price" maxlength="200" type="number" required="required" class="form-control" placeholder="Enter Buying Price" />
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Commission (In %)</label>
-												<input maxlength="200" type="number" required="required" class="form-control" placeholder="Enter Commission Amount"  />
+												<input name="product_commission" maxlength="200" type="number" required="required" class="form-control" placeholder="Enter Commission Amount"  />
 											</div>
 											<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >
 												Proceed Final
@@ -115,17 +118,15 @@ include "db-fetch/query.php"
 											<h3> Step 3</h3>
 											<div class="form-group">
 												<label class="control-label">Select Dealer</label>
-												<select class="form-control" name="DealerName" id="dealerName">
+												<select class="form-control" name="product_dealer">
 													<?php
 													while ($row = mysqli_fetch_array($queryDealerName, MYSQLI_ASSOC)) {
-														echo "<option value='" . $row['name'] . "'>".$row['name']."</option>";
+														echo "<option value='" . $row['id'] . "'>".$row['name']."</option>";
 													}
 													?>
 												</select>
 											</div>
-											<button class="btn btn-success btn-lg pull-right" id="ProductRegistry" type="submit">
-												Complete Registration
-											</button>
+											<input class="btn btn-success btn-lg pull-right" name="productRegistration" type="submit" value="Complete Registration"/>
 										</div>
 									</div>
 								</div>
