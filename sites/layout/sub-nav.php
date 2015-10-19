@@ -42,7 +42,7 @@
 		<a href="new-product" class="btn btn-info col-sm-3"> <i class="glyphicon glyphicon-plus"></i>
 		<br>
 		Product </a>
-		<a href="#" class="btn btn-info col-sm-3"> <i class="glyphicon glyphicon-plus"></i>
+		<a href="new-dealer" class="btn btn-info col-sm-3"> <i class="glyphicon glyphicon-plus"></i>
 		<br>
 		Dealer </a>
 		<a href="#" class="btn btn-info col-sm-3"> <i class="glyphicon glyphicon-cog"></i>

@@ -15,7 +15,7 @@ $(document).ready(function() {
 		if (!$item.hasClass('disabled')) {
 			navListItems.removeClass('btn-danger').addClass('btn-default');
 			$item.addClass('btn-danger');
-			allWells.hide();
+			allWells.fadeOut("slow").hide();
 			$target.show();
 			$target.find('input:eq(0)').focus();
 		}
@@ -50,5 +50,35 @@ $(document).ready(function() {
 		label_default : "Choose File", // Default: Choose File
 		label_selected : "Change File", // Default: Change File
 		no_label : true // Default: false
+	});
+
+	/*Dealer Registration using Ajax*/
+	$('#dealerRegistry').click(function() {
+		var companyName = $("#company_name").val();
+		var dealerName  = $("#dealer_name").val();
+		var dealerPhone = $("#dealer_phone").val();
+		var dealerEmail = $("#dealer_email").val();
+		var dataString  = 'companyName=' + companyName + '&dealerName=' + dealerName + '&dealerPhone=' + dealerPhone + '&dealerEmail=' + dealerEmail;
+		if ($.trim(companyName).length > 0 && $.trim(dealerName).length > 0 && $.trim(dealerPhone).length > 0 && $.trim(dealerEmail).length > 0) {
+			$.ajax({
+				type : "POST",
+				url : "ajax/ajaxDealerRegistration.php",
+				data : dataString,
+				cache : false,
+				beforeSend : function() {
+					$("#dealerRegistry").val('Connecting...');
+				},
+				success : function(data) {
+					if (data) {
+						$(".status").html("<div class='alert alert-success'>New Dealer Registered Successfully</div>");
+						  $("#dealerRegistration input[type=text]").val("");
+					} else {
+						$(".status").html("<span class='alert alert-danger'>Dealer Registeration Incomplete!</span>");
+					}
+				}
+			});
+
+		}
+		return false;
 	});
 });
