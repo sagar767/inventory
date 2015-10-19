@@ -149,7 +149,7 @@
 				success : function(data) {
 					if (data) {
 						$("body").hide().fadeIn(1500).delay(6000);
-						window.location.href = "sites/home.php";
+						window.location.href = "sites/home";
 					} else {
 						//Shake animation effect.
 						$('#main-login-form').shake();

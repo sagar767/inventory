@@ -17,7 +17,7 @@
 session_start();
 if(!empty($_SESSION['login_username']))
 {
-header('Location: sites/home.php');
+header('Location: sites/home');
 }
 ?>
 

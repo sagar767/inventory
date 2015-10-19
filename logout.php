@@ -5,5 +5,5 @@ if(!empty($_SESSION['login_username']))
 $_SESSION['login_username']='';
 session_destroy();
 }
-header("Location:login.php");
+header("Location:login");
 ?>

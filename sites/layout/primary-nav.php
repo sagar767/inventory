@@ -15,7 +15,7 @@
             <i class="glyphicon glyphicon-user"></i> Admin <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="asd.php">My Profile</a></li>
-            <li><a href="../logout.php"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+            <li><a href="../logout"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
           </ul>
         </li>
       </ul>
