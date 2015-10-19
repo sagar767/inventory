@@ -70,10 +70,11 @@ $(document).ready(function() {
 				},
 				success : function(data) {
 					if (data) {
-						$(".status").html("<div class='alert alert-success'>New Dealer Registered Successfully</div>");
+						$("#status").html("<div class='alert alert-success'>New Dealer Registered Successfully</div>");
 						  $("#dealerRegistration input[type=text]").val("");
+						   $("#dealerRegistration input[type=email]").val("");
 					} else {
-						$(".status").html("<span class='alert alert-danger'>Dealer Registeration Incomplete!</span>");
+						$("#status").html("<span class='alert alert-danger'>Dealer Registeration Incomplete!</span>");
 					}
 				}
 			});
@@ -84,6 +85,5 @@ $(document).ready(function() {
 //Alert Message Animation
 	//ALert Message Animation
 	$(".status").delay(5000).fadeOut();
-
 
 });
