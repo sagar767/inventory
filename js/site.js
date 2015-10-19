@@ -81,4 +81,35 @@ $(document).ready(function() {
 		}
 		return false;
 	});
+	
+	/*For Product Registraion*/
+	$('#ProductRegistry').click(function() {
+		var companyName = $("#company_name").val();
+		var dealerName  = $("#dealer_name").val();
+		var dealerPhone = $("#dealer_phone").val();
+		var dealerEmail = $("#dealer_email").val();
+		var dataString  = 'companyName=' + companyName + '&dealerName=' + dealerName + '&dealerPhone=' + dealerPhone + '&dealerEmail=' + dealerEmail;
+		if ($.trim(companyName).length > 0 && $.trim(dealerName).length > 0 && $.trim(dealerPhone).length > 0 && $.trim(dealerEmail).length > 0) {
+			$.ajax({
+				type : "POST",
+				url : "ajax/ajaxDealerRegistration.php",
+				data : dataString,
+				cache : false,
+				beforeSend : function() {
+					$("#dealerRegistry").val('Connecting...');
+				},
+				success : function(data) {
+					if (data) {
+						$(".status").html("<div class='alert alert-success'>New Dealer Registered Successfully</div>");
+						  $("#dealerRegistration input[type=text]").val("");
+					} else {
+						$(".status").html("<span class='alert alert-danger'>Dealer Registeration Incomplete!</span>");
+					}
+				}
+			});
+
+		}
+		return false;
+	});
+	
 });

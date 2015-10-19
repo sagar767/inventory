@@ -1,6 +1,6 @@
 <?php
 include ("../../configure/connection.php");
-session_start();
+//session_start();
 if (isset($_POST['companyName']) && isset($_POST['dealerName']) && isset($_POST['dealerPhone']) && isset($_POST['dealerEmail'])) {
 	$companyName = mysqli_real_escape_string($db, $_POST['companyName']);
 	$dealerName = mysqli_real_escape_string($db, $_POST['dealerName']);

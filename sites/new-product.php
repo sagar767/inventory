@@ -1,6 +1,7 @@
 <?php $title = "Product Registration";
 require_once ("layout/header.php");
 require_once ("layout/primary-nav.php");
+include "db-fetch/query.php"
 ?>
 
 <div class="container">
@@ -37,13 +38,13 @@ require_once ("layout/primary-nav.php");
 									<div class="stepwizard-step">
 										<a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
 										<p>
-											Dealer Details
+											Price Details
 										</p>
 									</div>
 									<div class="stepwizard-step">
 										<a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
 										<p>
-											Price Details
+											Dealer Details
 										</p>
 									</div>
 								</div>
@@ -81,7 +82,7 @@ require_once ("layout/primary-nav.php");
 												</div>
 											</div>
 											<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >
-												Next
+												Proceed Next
 											</button>
 										</div>
 									</div>
@@ -91,15 +92,19 @@ require_once ("layout/primary-nav.php");
 										<div class="col-md-12">
 											<h3> Step 2</h3>
 											<div class="form-group">
-												<label class="control-label">Company Name</label>
-												<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
+												<label class="control-label">Product Quantity(s)</label>
+												<input maxlength="200" type="number" required="required" class="form-control" placeholder="Enter Quantity" />
 											</div>
 											<div class="form-group">
-												<label class="control-label">Company Address</label>
-												<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address"  />
+												<label class="control-label">Product Buying Price</label>
+												<input maxlength="200" type="number" required="required" class="form-control" placeholder="Enter Buying Price" />
+											</div>
+											<div class="form-group">
+												<label class="control-label">Product Commission (In %)</label>
+												<input maxlength="200" type="number" required="required" class="form-control" placeholder="Enter Commission Amount"  />
 											</div>
 											<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >
-												Next
+												Proceed Final
 											</button>
 										</div>
 									</div>
@@ -109,15 +114,17 @@ require_once ("layout/primary-nav.php");
 										<div class="col-md-12">
 											<h3> Step 3</h3>
 											<div class="form-group">
-												<label class="control-label">Company Name</label>
-												<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
+												<label class="control-label">Select Dealer</label>
+												<select class="form-control" name="DealerName" id="dealerName">
+													<?php
+													while ($row = mysqli_fetch_array($queryDealerName, MYSQLI_ASSOC)) {
+														echo "<option value='" . $row['name'] . "'>".$row['name']."</option>";
+													}
+													?>
+												</select>
 											</div>
-											<div class="form-group">
-												<label class="control-label">Company Address</label>
-												<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address"  />
-											</div>
-											<button class="btn btn-success btn-lg pull-right" type="submit">
-												Submit
+											<button class="btn btn-success btn-lg pull-right" id="ProductRegistry" type="submit">
+												Complete Registration
 											</button>
 										</div>
 									</div>
