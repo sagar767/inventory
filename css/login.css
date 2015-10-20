@@ -22,7 +22,9 @@
 html, body {
 	background: #efefef;
 	padding: 10px;
-	font-family: 'Varela Round';
+	font-family: 'Roboto Condensed' !important;
+    font-style: normal;
+    font-weight: 300;
 }
 /*=== 2. Anchor Link ===*/
 a {
@@ -277,9 +279,8 @@ label:after, [type="radio"]:checked + label:after {
 /*=== 9. Misc ===*/
 .logo {
 	padding: 15px 0;
-	font-size: 2em;
+	font-size: 2.2em;
 	color: #00B3F4;
-	font-weight: normal;
 	text-align: center;
 }
 label {

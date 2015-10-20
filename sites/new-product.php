@@ -72,7 +72,7 @@ include "db-fetch/query.php"
 											<div class="form-group">
 												<label class="control-label">Product Category</label>
 												<select class="form-control" name="product_category">
-													<option value="Home Appliance">Home Appliance</option>
+													<option value="Home Appliances">Home Appliances</option>
 													<option value="Mobile">Mobile</option>
 													<option value="Grocery">Grocery</option>
 												</select>

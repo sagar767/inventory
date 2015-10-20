@@ -1,6 +1,7 @@
 <?php
 include ("../configure/connection.php");
-//FOr Dealer Information fetch in Product Registration
+
+//For Dealer Information fetch in Product Registration
 $queryDealerName = mysqli_query($db, "SELECT id,name FROM dealer ORDER BY id DESC");
 
 //Product Registration
@@ -8,7 +9,9 @@ if (isset($_POST['productRegistration'])) {
 	$productImage = $_FILES["productImage"]["name"];
 	$productImagePath = "uploads/products/" . $productImage;
 	move_uploaded_file($_FILES["productImage"]["tmp_name"], $productImagePath);
-
+	if($productImage == ""){
+		$productImagePath = "http://www.safteq.com/wp-content/uploads/2015/08/blank-product-w320.png";
+	}
 	$productSku = $_POST['product_sku'];
 	$productName = mysqli_real_escape_string($db, $_POST['product_name']);
 	$productDetails = mysqli_real_escape_string($db, $_POST['product_details']);
@@ -41,4 +44,8 @@ if (isset($_POST['productRegistration'])) {
 		}
 	}
 }
+
+//Product View Page
+$queryProductView = mysqli_query($db, "SELECT * FROM product ORDER BY id DESC");
+
 ?>
