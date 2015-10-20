@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 19, 2015 at 11:50 PM
+-- Generation Time: Oct 20, 2015 at 01:21 PM
 -- Server version: 5.6.25-0ubuntu0.15.04.1
 -- PHP Version: 5.6.4-4ubuntu6.3
 
@@ -83,15 +83,18 @@ CREATE TABLE IF NOT EXISTS `dealer` (
   `name` varchar(255) NOT NULL,
   `phone` bigint(10) NOT NULL,
   `email` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dealer`
 --
 
 INSERT INTO `dealer` (`id`, `company`, `name`, `phone`, `email`) VALUES
-(12, 'asdasd', 'dsdsd', 7890713852, 'asd@fff.com'),
-(13, 'asdasd', 'asdasd', 2323232323, 'sad@ffz.com');
+(12, 'Dealer 1', 'Dealer 1', 7890713852, 'asd@fff.com'),
+(13, 'asdasd', 'Dealer 2', 2323232323, 'sad@ffz.com'),
+(14, 'asd', 'Dealer 3', 3434343434, 'asd@gg.com'),
+(15, 'asd', 'Dealer 4', 0, 'asd@gg.com'),
+(16, 'asd', 'Dealer 5', 0, 'asd@sf');
 
 -- --------------------------------------------------------
 
@@ -108,14 +111,22 @@ CREATE TABLE IF NOT EXISTS `ledger` (
   `date` date NOT NULL,
   `services` enum('Stock In','Checkout','Stock Out','Profit') NOT NULL,
   `user_by` varchar(155) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ledger`
 --
 
 INSERT INTO `ledger` (`id`, `pid`, `quantity`, `tr_type`, `amount`, `date`, `services`, `user_by`) VALUES
-(1, 11, 4, 'Inward', 4000.00, '2015-10-19', 'Stock In', 'admin');
+(1, 11, 4, 'Inward', 4000.00, '2015-10-19', 'Stock In', 'admin'),
+(2, 12, 5, 'Inward', 2000.00, '2015-10-20', 'Stock In', 'admin'),
+(3, 13, 3, 'Inward', 15000.00, '2015-10-20', 'Stock In', 'admin'),
+(4, 14, 3, 'Inward', 600.00, '2015-10-20', 'Stock In', 'admin'),
+(5, 15, 4, 'Inward', 425.00, '2015-10-20', 'Stock In', 'admin'),
+(6, 16, 3, 'Inward', 900.00, '2015-10-20', 'Stock In', 'admin'),
+(7, 17, 2, 'Inward', 25000.00, '2015-10-20', 'Stock In', 'admin'),
+(8, 18, 2, 'Inward', 25800.00, '2015-10-20', 'Stock In', 'admin'),
+(9, 19, 2, 'Inward', 300.00, '2015-10-20', 'Stock In', 'admin');
 
 -- --------------------------------------------------------
 
@@ -134,14 +145,22 @@ CREATE TABLE IF NOT EXISTS `product` (
   `prd_details` varchar(255) NOT NULL,
   `prd_quantity` int(5) NOT NULL,
   `prd_catg` enum('Mobile','Home Appliances','Grocery') NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `sku`, `dealer_id`, `prd_name`, `prd_base_price`, `prd_com`, `prd_img`, `prd_details`, `prd_quantity`, `prd_catg`) VALUES
-(11, 'PDI1151311228', 12, 'Micromax XNINJA', 4000.00, 2.00, 'uploads/products/E653_Thumbnail.jpg', 'ASDASD', 4, 'Mobile');
+(11, 'PDI1151311228', 12, 'Micromax XNINJA', 4000.00, 2.00, 'uploads/products/E653_Thumbnail.jpg', 'ASDASD', 4, 'Mobile'),
+(12, 'PDI157704844', 16, 'Nokia BL5030', 2000.00, 3.00, 'uploads/products/5235.jpg', 'Mobile Details on Bar Phone', 5, 'Mobile'),
+(13, 'PDI1586447045', 13, 'Blackberry Beta', 15000.00, 2.00, 'uploads/products/Flat-Mobile-UI-Design-29-3.jpg', 'Slim and Cool Looking', 3, 'Mobile'),
+(14, 'PDI190274731', 12, 'Grocery of Fruits', 600.00, 2.00, 'uploads/products/Grocery-2.jpg', 'Fruits selling in Group', 3, 'Grocery'),
+(15, 'PDI539844557', 16, 'Food Leveler for 60', 425.00, 3.00, 'uploads/products/i-grocery.jpg', 'Demo Details of Grocery', 4, 'Grocery'),
+(16, 'PDI613822873', 15, 'Usha Fan 40 2L', 900.00, 8.00, 'uploads/products/Electrical-desk-font-b-fan-b-font-hot-font-b-sale-b-font-model-free-shipping.jpg', 'Comfortable beyond the expectation', 3, 'Home Appliances'),
+(17, 'PDI1483689775', 14, 'LG Cooler', 25000.00, 12.00, 'uploads/products/kicthen-appliances.jpg', 'Refrigerator Details Demo', 2, 'Home Appliances'),
+(18, 'PDI81394640', 15, 'LG Plasma TV', 25800.00, 6.00, 'http://langka.lib.ugm.ac.id/public/images/no_image.jpg', 'Plasma TV of 34"', 2, 'Home Appliances'),
+(19, 'PDI329708269', 12, 'Grocery at New Range', 300.00, 1.00, 'http://langka.lib.ugm.ac.id/public/images/no_image.jpg', 'Grocery for Indians', 2, 'Grocery');
 
 -- --------------------------------------------------------
 
@@ -232,17 +251,17 @@ MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `dealer`
 --
 ALTER TABLE `dealer`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `ledger`
 --
 ALTER TABLE `ledger`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `user`
 --
