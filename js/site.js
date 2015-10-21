@@ -82,8 +82,31 @@ $(document).ready(function() {
 		}
 		return false;
 	});
-//Alert Message Animation
-	//ALert Message Animation
+	
+	//Alert Message Animation
 	$(".status").delay(5000).fadeOut();
 
+	/*Dealer View Details*/
+	$(".view-dealers a.delete").click(function() {
+		var element = $(this);
+		var del_dealer_id = element.attr("id");
+		var info = 'del_dealer_id=' + del_dealer_id;
+		if (confirm("Are you sure you want to delete this?")) {
+			$.ajax({
+				type : "POST",
+				url : "ajax/ajaxDealerDetails.php",
+				data : info,
+				success : function() {
+				}
+			});
+			$(this).parents("tr").animate({
+				backgroundColor : "#003"
+			}, "normal").animate({
+				opacity : "hide"
+			}, "normal");
+		}
+		return false;
+	});
+	
 });
+

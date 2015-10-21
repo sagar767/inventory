@@ -166,3 +166,14 @@ footer {
 .product-info .prd-catg{
 	padding-top:5px;
 }
+
+/*Dealer View Details*/
+.view-dealers tr th{
+	font-weight:400;
+}
+.view-dealers a:hover{
+	text-decoration: none;
+}
+.view-dealers a{
+	padding-right:5px;
+}

@@ -17,15 +17,16 @@ include "db-fetch/query.php";
 			<!-- column 2 -->
 			<h3><i class="glyphicon glyphicon-user"></i> View Dealers</h3>
 			<hr>
-			<div class="row">
+			<div class="row view-dealers">
 				<!-- center left-->
-				<p>
+				<p class="alert alert-warning">
 					Manage Dealer Details.Edit or Delete details.
 				</p>
-				<table class="table">
+				<table class="table table-hover table-responsive">
 					<thead>
 						<tr>
-							<th>Sr. No.</th>
+							<th>Serial</th>
+							<th>Dealer Id</th>
 							<th>Dealer Name</th>
 							<th>Company Name</th>
 							<th>Phone No.</th>
@@ -40,10 +41,19 @@ include "db-fetch/query.php";
 						?>
 						<tr>
 							<td><?php echo $i; ?></td>
+							<td>DINV<?php echo $row['id']; ?></td>
 							<td><?php echo $row['name']; ?></td>
 							<td><?php echo $row['company']; ?></td>
 							<td><?php echo $row['phone']; ?></td>
 							<td><?php echo $row['email']; ?></td>
+							<td>
+							<a style="color: #E15639; font-size: 1.3em;" href="#" id="<?php echo $row['id']; ?>" class="delete">
+                               <i class="fa fa-trash-o"></i>
+                           </a>
+                           <a style="color: #7388B6; font-size: 1.3em;" href="#">
+                               <i class="fa fa-edit"></i>
+                           </a>
+                           </td>
 						</tr>
 						<?php
 						$i++; 
