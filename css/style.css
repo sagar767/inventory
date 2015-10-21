@@ -6,6 +6,9 @@ body{
     font-weight: 300;
     color:#999999;
 }
+hr{
+	clear: both;
+}
 .navbar-static-top {
 	margin-bottom: 20px;
 }
@@ -201,8 +204,9 @@ footer {
 	padding: 10px 0;
 }
 .product-billing .product-billing-info .prd{
-	padding:15px 0;
+	padding:20px 0;
 	text-align: justify;
+	padding-top:0;
 }
 .product-billing img{
 	width:100%;
@@ -239,4 +243,9 @@ footer {
 	font-weight:300;
 	color:#919191;
 	padding-right:5px;
+}
+
+/*Product Billing*/
+.input-group{
+	   margin-bottom: 15px;
 }
