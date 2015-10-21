@@ -184,13 +184,13 @@ $(document).ready(function() {
 	/*Customer Billing of Product*/
 	$('#btnBilling').click(function() {
 		var customerName   = $("#customer_name").val();
-		var customerEmail  = $("#customer_email).val();
+		var customerEmail  = $("#customer_email").val();
 		var customerPhone  = $("#customer_phone").val();
 		var paymentMode    = $("#payment_mode").val();
-		var productQuantity    = $("#prd_quanity").val();
+		var productQuantity    = $("#prd_quantity").val();
 		var productId      = $("#prd_id").val();
-		var productCommission     = $("#prd_commission).val();
-		var productActualPrice     = $("#prd_actual_price).val();
+		var productCommission     = $("#prd_commission").val();
+		var productActualPrice     = $("#prd_actual_price").val();
 		
 		var dataString = 'customerName=' + customerName + '&productActualPrice=' + productActualPrice + '&customerEmail=' + customerEmail + '&customerPhone=' + customerPhone + '&paymentMode=' + paymentMode + '&productQuantity=' + productQuantity + '&productId=' + productId + '&productCommission=' + productCommission;
 		if ($.trim(customerName).length > 0 && $.trim(customerEmail).length > 0 && $.trim(customerPhone).length > 0 && $.trim(paymentMode).length > 0 && $.trim(productQuantity).length > 0 && $.trim(productId).length > 0 && $.trim(productCommission).length > 0 && $.trim(productActualPrice).length > 0) {
@@ -204,11 +204,11 @@ $(document).ready(function() {
 				},
 				success : function(data) {
 					if (data) {
-						$("#status").html("<div class='alert alert-success'>Oh!! Billing Created Successfully</div>");
+						$("#status").html("<div class='alert alert-success'>Billing Created Successfully</div>");
 						  $("#productBilling input[type=text]").val("");
 						   $("#productBilling input[type=email]").val("");
 					} else {
-						$("#status").html("<span class='alert alert-danger'> Product Billing Incomplete!</span>");
+						$("#status").html("<span class='alert alert-danger'>Product Billing Incomplete!</span>");
 					}
 				}
 			});

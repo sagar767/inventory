@@ -12,9 +12,12 @@ if (isset($_POST['customerName']) && isset($_POST['productActualPrice']) && isse
 	$productActualPrice = mysqli_real_escape_string($db, $_POST['productActualPrice']);
 	$date =  date("Y-m-d");
 	
-	$resultProductQuantity = mysqli_query($db, "SELECT sum(quantity) FROM ledger where id = '$productId' and tr_type='Outward' and services= 'Checkout'");
-	$resultProductCount = mysqli_num_rows($resultProductQuantity);
-	if($resultProductCount>1){
+	$resultProductQuantity = mysqli_query($db, "SELECT sum(quantity) as total FROM ledger where pid = '$productId'");
+	//$resultProductCount = mysqli_num_rows($resultProductQuantity);
+	$row = mysqli_fetch_array($resultProductQuantity, MYSQLI_ASSOC);
+	$total = $row['total'];
+	
+	if($total>1){
 		$productTotalAmount = ($productActualPrice*$productQuantity) ;
 		$resultBilling = mysqli_query($db, "INSERT INTO billing(id,pid,cus_name,cus_phone,cus_mail,pay_mode,prd_quantity,date,prd_total) values ('','$productId','$customerName', '$customerPhone', '$customerEmail','$paymentMode','$productQuantity','$date','$productTotalAmount')");
 		if (!$resultBilling) {
