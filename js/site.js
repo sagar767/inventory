@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	/*Product Registration Process*/
+	/*Product Registration Process Steps*/
 	var navListItems = $('div.setup-panel div a'),
 	    allWells = $('.setup-content'),
 	    allNextBtn = $('.nextBtn');
@@ -42,6 +42,11 @@ $(document).ready(function() {
 
 	$('div.setup-panel div a.btn-danger').trigger('click');
 
+	/*Footer Toggle Close*/
+	$(".toggle-close").click(function(){
+		$(".footer-container").slideToggle("slow");
+		checktimeInterval(count);
+	});
 	/*Product Upload button related*/
 	$.uploadPreview({
 		input_field : "#image-upload", // Default: .image-upload

@@ -9,6 +9,9 @@
       <a href="https://github.com/sagar767" target="_blank" class="navbar-btn btn-warning btn pull-right">
       <span class="fa fa-github"></span>  Follow Me On Github</a>
     </div>
+    <a href="#" class="toggle-close">
+    	<i class="fa fa-arrow-circle-down"></i>
+    </a>
   </div>
  </div>
 <script src="../js/jquery.min.js" type="text/javascript"></script>

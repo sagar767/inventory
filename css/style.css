@@ -9,6 +9,15 @@ body{
 .footer-container{
 	border-top:2px solid #F0AD4E;
 }
+a.toggle-close {
+	position:absolute;
+	bottom:25px;
+	right:25px;
+}
+.toggle-close i{
+	font-size:2.2em;
+	color:#777777;
+}
 hr{
 	clear: both;
 }
