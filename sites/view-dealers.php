@@ -19,7 +19,7 @@ include "db-fetch/query.php";
 			<hr>
 			<div class="row view-dealers">
 				<!-- center left-->
-				<p class="alert alert-warning">
+				<p class="alert alert-success">
 					Manage Dealer Details.Edit or Delete details.
 				</p>
 				<table class="table table-hover table-responsive">

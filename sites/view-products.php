@@ -42,7 +42,7 @@ include "db-fetch/query.php";
 									</div>
 								</div>
 							</div>
-								<a href="create-billing?product_sku=<?php echo $row['sku']; ?>&product_id=<?php echo base64_encode($row['id']); ?>" class="product-view-action btn btn-success">
+								<a href="create-billing?product_sku=<?php echo base64_encode($row['sku']); ?>&product_id=<?php echo base64_encode($row['id']); ?>" class="product-view-action btn btn-success">
 									Make Billing
 								</a>
 						</div>

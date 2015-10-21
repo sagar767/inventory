@@ -71,12 +71,12 @@ require_once ("layout/primary-nav.php");
 								 <label class="control-label">Product Qantity</label>
 									<div class="input-group col-md-2">
 										<span class="input-group-btn">
-											<button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+											<button type="button" class="btn btn-default btn-number"  data-type="minus" data-field="quant[2]">
 												<span class="glyphicon glyphicon-minus"></span>
 											</button> </span>
 										<input type="text" name="quant[2]" class="form-control input-number" value="10" min="1" max="100">
 										<span class="input-group-btn">
-											<button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+											<button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
 												<span class="glyphicon glyphicon-plus"></span>
 											</button> </span>
 									</div>
@@ -98,10 +98,11 @@ require_once ("layout/primary-nav.php");
 										<select class="form-control" name="payment_mode">
 													<option value="Cash">Cash</option>
 													<option value="Cheque">Cheque</option>
-													<option value="Card">Credit/Debit Card</option>
+													<option value="Card">Credit/Debit Card/NEFT</option>
+													<option value="Credit">On Credit</option>
 										</select>
 									</div>
-									<button class="btn btn-default nextBtn btn-lg pull-right" id="dealerRegistry" type="button" >
+									<button class="btn btn-info nextBtn btn-lg pull-right" id="dealerRegistry" type="button" >
 										Complete Billing
 									</button>
 								</div>

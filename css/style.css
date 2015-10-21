@@ -80,6 +80,9 @@ footer {
 	color: #CCCCCC;
 	margin-bottom: 25px;
 }
+.panel-default{
+	margin-bottom: 100px;
+}
 .btn-circle {
 	width: 30px;
 	height: 30px;
@@ -204,7 +207,7 @@ footer {
 	padding: 10px 0;
 }
 .product-billing .product-billing-info .prd{
-	padding:20px 0;
+	padding:10px 0;
 	text-align: justify;
 	padding-top:0;
 }
@@ -214,11 +217,11 @@ footer {
 }
 .product-billing .product-billing-info .prd-name{
 	color:#4285F4;
-	font-size:2.8em;
+	font-size:3em;
 }
 .product-billing .product-billing-info .prd-catg{
 	color:#FDBE07;
-	font-size:2.5em;
+	font-size:2.2em;
 }
 .product-billing .product-billing-info .prd-base-price{
 	color:#EA4335;
@@ -226,7 +229,7 @@ footer {
 }
 .product-billing .product-billing-info .prd-quantity{
 	color:#BDC3C7;
-	font-size:2.5em;
+	font-size:2em;
 	padding-left:15px;
 }
 .product-billing .product-billing-info .prd-quantity .stock-message-status{
@@ -247,5 +250,6 @@ footer {
 
 /*Product Billing*/
 .input-group{
-	   margin-bottom: 15px;
+	margin-bottom: 15px;
 }
+

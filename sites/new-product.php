@@ -63,11 +63,11 @@ include "db-fetch/query.php"
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Name</label>
-												<input name="product_name" maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
+												<input name="product_name" maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Product Name" />
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Details</label>
-												<textarea name="product_details" required="required" class="form-control" placeholder="Enter your address" ></textarea>
+												<textarea name="product_details" required="required" class="form-control" placeholder="Enter Product Details" ></textarea>
 											</div>
 											<div class="form-group">
 												<label class="control-label">Product Category</label>

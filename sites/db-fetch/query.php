@@ -52,7 +52,7 @@ if (isset($_POST['productRegistration'])) {
 	$queryDealerView = mysqli_query($db, "SELECT * FROM dealer ORDER BY id DESC");
 
 	//Product Billing of specific product(id)
-	$productSku = $_GET['product_sku'];
+	$productSku = base64_decode($_GET['product_sku']);
 	$productId = base64_decode($_GET['product_id']);
 	$queryProductBilling = mysqli_query($db, "SELECT * FROM product where id = '$productId' and sku= '$productSku'");
 	$row = mysqli_fetch_array($queryProductBilling, MYSQLI_ASSOC);

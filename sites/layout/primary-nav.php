@@ -6,7 +6,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-toggle"></span>
       </button>
-      <a class="navbar-brand" href="#">Welcome to Control Panel</a>
+      <a class="navbar-brand" href="home">Welcome to Control Panel</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
