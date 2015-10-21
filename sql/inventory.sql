@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 20, 2015 at 01:21 PM
+-- Generation Time: Oct 22, 2015 at 12:05 AM
 -- Server version: 5.6.25-0ubuntu0.15.04.1
 -- PHP Version: 5.6.4-4ubuntu6.3
 
@@ -28,16 +28,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `billing` (
 `id` int(10) NOT NULL,
-  `prd_name` varchar(120) NOT NULL,
-  `prd_sell_price` decimal(10,2) NOT NULL,
-  `prd_img` longblob NOT NULL,
-  `prd_details` varchar(250) NOT NULL,
-  `prd_quantity` int(5) NOT NULL,
-  `prd_catg` varchar(80) NOT NULL,
+  `pid` int(10) NOT NULL,
   `cus_name` varchar(120) NOT NULL,
   `cus_mail` varchar(80) NOT NULL,
-  `cus_phone` bigint(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `cus_phone` bigint(10) NOT NULL,
+  `pay_mode` enum('Cash','Cheque','Card','Credit') NOT NULL,
+  `prd_quantity` int(10) NOT NULL,
+  `date` date NOT NULL,
+  `prd_total` decimal(10,2) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -90,11 +89,11 @@ CREATE TABLE IF NOT EXISTS `dealer` (
 --
 
 INSERT INTO `dealer` (`id`, `company`, `name`, `phone`, `email`) VALUES
-(12, 'Dealer 1', 'Dealer 1', 7890713852, 'asd@fff.com'),
-(13, 'asdasd', 'Dealer 2', 2323232323, 'sad@ffz.com'),
-(14, 'asd', 'Dealer 3', 3434343434, 'asd@gg.com'),
-(15, 'asd', 'Dealer 4', 0, 'asd@gg.com'),
-(16, 'asd', 'Dealer 5', 0, 'asd@sf');
+(12, 'Company 1', 'Dealer 1', 7890713852, 'asd@fff.com'),
+(13, 'Company 2', 'Dealer 2', 2323232323, 'sad@ffz.com'),
+(14, 'Company 3', 'Dealer 3', 3434343434, 'asd@gg.com'),
+(15, 'Company 4', 'Dealer 4', 4356559835, 'asd@gg.com'),
+(16, 'Company 5', 'Dealer 5', 2536666614, 'asd@sf');
 
 -- --------------------------------------------------------
 
@@ -157,7 +156,7 @@ INSERT INTO `product` (`id`, `sku`, `dealer_id`, `prd_name`, `prd_base_price`, `
 (13, 'PDI1586447045', 13, 'Blackberry Beta', 15000.00, 2.00, 'uploads/products/Flat-Mobile-UI-Design-29-3.jpg', 'Slim and Cool Looking', 3, 'Mobile'),
 (14, 'PDI190274731', 12, 'Grocery of Fruits', 600.00, 2.00, 'uploads/products/Grocery-2.jpg', 'Fruits selling in Group', 3, 'Grocery'),
 (15, 'PDI539844557', 16, 'Food Leveler for 60', 425.00, 3.00, 'uploads/products/i-grocery.jpg', 'Demo Details of Grocery', 4, 'Grocery'),
-(16, 'PDI613822873', 15, 'Usha Fan 40 2L', 900.00, 8.00, 'uploads/products/Electrical-desk-font-b-fan-b-font-hot-font-b-sale-b-font-model-free-shipping.jpg', 'Comfortable beyond the expectation', 3, 'Home Appliances'),
+(16, 'PDI613822873', 15, 'Usha Fan 40 2L', 900.00, 8.00, 'uploads/products/superfan-a1-400x400-imae3hyrzf9p7pch.jpeg', 'Comfortable beyond the expectation', 3, 'Home Appliances'),
 (17, 'PDI1483689775', 14, 'LG Cooler', 25000.00, 12.00, 'uploads/products/kicthen-appliances.jpg', 'Refrigerator Details Demo', 2, 'Home Appliances'),
 (18, 'PDI81394640', 15, 'LG Plasma TV', 25800.00, 6.00, 'http://langka.lib.ugm.ac.id/public/images/no_image.jpg', 'Plasma TV of 34"', 2, 'Home Appliances'),
 (19, 'PDI329708269', 12, 'Grocery at New Range', 300.00, 1.00, 'http://langka.lib.ugm.ac.id/public/images/no_image.jpg', 'Grocery for Indians', 2, 'Grocery');
@@ -190,7 +189,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `user_type`) VALUES
 -- Indexes for table `billing`
 --
 ALTER TABLE `billing`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `pid` (`pid`);
 
 --
 -- Indexes for table `cart`
@@ -236,7 +235,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `billing`
 --
 ALTER TABLE `billing`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `cart`
 --
@@ -270,6 +269,12 @@ MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `billing`
+--
+ALTER TABLE `billing`
+ADD CONSTRAINT `billing_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `product` (`id`);
 
 --
 -- Constraints for table `cart`
