@@ -48,4 +48,6 @@ if (isset($_POST['productRegistration'])) {
 //Product View Page
 $queryProductView = mysqli_query($db, "SELECT * FROM product ORDER BY id DESC");
 
+//Dealer View Page
+$queryDealerView = mysqli_query($db, "SELECT * FROM dealer ORDER BY id DESC");
 ?>
