@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 22, 2015 at 12:05 AM
+-- Generation Time: Oct 22, 2015 at 01:35 AM
 -- Server version: 5.6.25-0ubuntu0.15.04.1
 -- PHP Version: 5.6.4-4ubuntu6.3
 
@@ -36,7 +36,14 @@ CREATE TABLE IF NOT EXISTS `billing` (
   `prd_quantity` int(10) NOT NULL,
   `date` date NOT NULL,
   `prd_total` decimal(10,2) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `billing`
+--
+
+INSERT INTO `billing` (`id`, `pid`, `cus_name`, `cus_mail`, `cus_phone`, `pay_mode`, `prd_quantity`, `date`, `prd_total`) VALUES
+(9, 12, 'asdsad', 'sad@gmailc.oo', 9830412578, 'Card', 2, '2015-10-22', 4000.00);
 
 -- --------------------------------------------------------
 
@@ -105,27 +112,29 @@ CREATE TABLE IF NOT EXISTS `ledger` (
 `id` int(10) NOT NULL,
   `pid` int(10) NOT NULL,
   `quantity` int(10) NOT NULL,
-  `tr_type` enum('Inward','Outward','Commission') NOT NULL,
+  `tr_type` enum('Inward','Outward') NOT NULL,
   `amount` decimal(10,2) NOT NULL,
   `date` date NOT NULL,
   `services` enum('Stock In','Checkout','Stock Out','Profit') NOT NULL,
   `user_by` varchar(155) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ledger`
 --
 
 INSERT INTO `ledger` (`id`, `pid`, `quantity`, `tr_type`, `amount`, `date`, `services`, `user_by`) VALUES
-(1, 11, 4, 'Inward', 4000.00, '2015-10-19', 'Stock In', 'admin'),
-(2, 12, 5, 'Inward', 2000.00, '2015-10-20', 'Stock In', 'admin'),
-(3, 13, 3, 'Inward', 15000.00, '2015-10-20', 'Stock In', 'admin'),
-(4, 14, 3, 'Inward', 600.00, '2015-10-20', 'Stock In', 'admin'),
-(5, 15, 4, 'Inward', 425.00, '2015-10-20', 'Stock In', 'admin'),
-(6, 16, 3, 'Inward', 900.00, '2015-10-20', 'Stock In', 'admin'),
-(7, 17, 2, 'Inward', 25000.00, '2015-10-20', 'Stock In', 'admin'),
-(8, 18, 2, 'Inward', 25800.00, '2015-10-20', 'Stock In', 'admin'),
-(9, 19, 2, 'Inward', 300.00, '2015-10-20', 'Stock In', 'admin');
+(1, 11, 4, 'Inward', 16000.00, '2015-10-19', 'Stock In', 'admin'),
+(2, 12, 5, 'Inward', 10000.00, '2015-10-20', 'Stock In', 'admin'),
+(3, 13, 3, 'Inward', 45000.00, '2015-10-20', 'Stock In', 'admin'),
+(4, 14, 3, 'Inward', 1800.00, '2015-10-20', 'Stock In', 'admin'),
+(5, 15, 4, 'Inward', 1700.00, '2015-10-20', 'Stock In', 'admin'),
+(6, 16, 3, 'Inward', 2700.00, '2015-10-20', 'Stock In', 'admin'),
+(7, 17, 2, 'Inward', 50000.00, '2015-10-20', 'Stock In', 'admin'),
+(8, 18, 2, 'Inward', 51600.00, '2015-10-20', 'Stock In', 'admin'),
+(9, 19, 2, 'Inward', 600.00, '2015-10-20', 'Stock In', 'admin'),
+(15, 12, -2, 'Outward', -4000.00, '2015-10-22', 'Checkout', 'admin'),
+(16, 12, 2, 'Outward', 120.00, '2015-10-22', 'Profit', 'admin');
 
 -- --------------------------------------------------------
 
@@ -235,7 +244,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `billing`
 --
 ALTER TABLE `billing`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `cart`
 --
@@ -255,7 +264,7 @@ MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 -- AUTO_INCREMENT for table `ledger`
 --
 ALTER TABLE `ledger`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `product`
 --

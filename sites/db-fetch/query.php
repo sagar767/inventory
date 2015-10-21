@@ -21,6 +21,8 @@ if (isset($_POST['productRegistration'])) {
 	$productCommission = mysqli_real_escape_string($db, $_POST['product_commission']);
 	$productDealer = mysqli_real_escape_string($db, $_POST['product_dealer']);
 
+	$productTotalBuyingAmount = ($productQuantity*$productBuyingprice);
+	
 	$resultProduct = mysqli_query($db, "INSERT INTO product(id,sku,dealer_id,prd_name,prd_base_price,prd_com,prd_img,prd_details,prd_quantity,prd_catg) 
 	values ('','$productSku','$productDealer','$productName', '$productBuyingprice','$productCommission','$productImagePath','$productDetails','$productQuantity','$productCategory')");
 
@@ -33,7 +35,7 @@ if (isset($_POST['productRegistration'])) {
 		$productDate = date("Y-m-d");
 		$userby = $_SESSION['login_username'];
 		$resultLedger = mysqli_query($db, "INSERT INTO ledger(id,pid,quantity,tr_type,amount,date,services,user_by) 
-		values ('','$product_id','$productQuantity','Inward', '$productBuyingprice','$productDate','Stock In','$userby')");
+		values ('','$product_id','$productQuantity','Inward', '$productTotalBuyingAmount','$productDate','Stock In','$userby')");
 
 		if (!$resultProduct && !$resultLedger) {
 			$_SESSION['upload_message'] = FALSE;
