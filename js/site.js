@@ -188,12 +188,14 @@ $(document).ready(function() {
 		var customerPhone  = $("#customer_phone").val();
 		var paymentMode    = $("#payment_mode").val();
 		var productQuantity    = $("#prd_quantity").val();
+		var productUserBy      = $("#prd_user_by").val();
+		var productBasePrice     = $("#prd_base_price").val();
 		var productId      = $("#prd_id").val();
 		var productCommission     = $("#prd_commission").val();
 		var productActualPrice     = $("#prd_actual_price").val();
 		
-		var dataString = 'customerName=' + customerName + '&productActualPrice=' + productActualPrice + '&customerEmail=' + customerEmail + '&customerPhone=' + customerPhone + '&paymentMode=' + paymentMode + '&productQuantity=' + productQuantity + '&productId=' + productId + '&productCommission=' + productCommission;
-		if ($.trim(customerName).length > 0 && $.trim(customerEmail).length > 0 && $.trim(customerPhone).length > 0 && $.trim(paymentMode).length > 0 && $.trim(productQuantity).length > 0 && $.trim(productId).length > 0 && $.trim(productCommission).length > 0 && $.trim(productActualPrice).length > 0) {
+		var dataString = 'customerName=' + customerName + '&productUserBy=' + productUserBy + '&productBasePrice=' + productBasePrice + '&productActualPrice=' + productActualPrice + '&customerEmail=' + customerEmail + '&customerPhone=' + customerPhone + '&paymentMode=' + paymentMode + '&productQuantity=' + productQuantity + '&productId=' + productId + '&productCommission=' + productCommission;
+		if ($.trim(customerName).length > 0 && $.trim(customerEmail).length > 0 && $.trim(customerPhone).length > 0 && $.trim(paymentMode).length > 0 && $.trim(productQuantity).length > 0 && $.trim(productId).length > 0 && $.trim(productCommission).length > 0 && $.trim(productActualPrice).length > 0 && $.trim(productUserBy).length > 0 && $.trim(productBasePrice).length > 0) {
 			$.ajax({
 				type : "POST",
 				url : "ajax/ajaxproductBilling.php",

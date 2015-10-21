@@ -54,6 +54,8 @@ require_once ("layout/primary-nav.php");
 							    echo $actual_price; 
 						    ?>
 							<span class="per-unit">Per Unit / Per Box</span>
+							<input type="hidden" id="prd_user_by" value="<?php echo $_SESSION['login_username'];?>">
+							<input type="hidden" id="prd_base_price" value="<?php echo $rowProduct['prd_base_price'];?>">
 							<input type="hidden" id="prd_commission" value="<?php echo $commission;?>">
 							<input type="hidden" id="prd_actual_price" value="<?php echo $actual_price;?>">
 						</div>
@@ -66,7 +68,7 @@ require_once ("layout/primary-nav.php");
 				<hr>
 				
 				<!--Product Billing Form-->
-				<h3><i class="glyphicon glyphicon-barcode"></i> Billing of Product SKU - <?php echo $row['sku']; ?> </h3>
+				<h3><i class="glyphicon glyphicon-barcode"></i> Billing of Product SKU - <?php echo $rowProduct['sku']; ?> </h3>
 				<hr>
 				<div id="status"></div>
 				<div class="panel panel-default">
@@ -111,7 +113,7 @@ require_once ("layout/primary-nav.php");
 													<option value="Credit">On Credit</option>
 										</select>
 									</div>
-									<input type="hidden" id="prd_id" value="<?php echo $row['id'];?>">
+									<input type="hidden" id="prd_id" value="<?php echo $rowProduct['id'];?>">
 									<button class="btn btn-info nextBtn btn-lg pull-right" id="btnBilling" type="button" >
 										Complete Billing
 									</button>

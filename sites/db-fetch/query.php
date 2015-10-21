@@ -56,7 +56,7 @@ if (isset($_POST['productRegistration'])) {
 	$productId = base64_decode($_GET['product_id']);
 	
 	$queryProductBilling = mysqli_query($db, "SELECT * FROM product where id = '$productId' and sku= '$productSku'");
-	$resultProductQuantity = mysqli_query($db, "SELECT sum(quantity) as total FROM ledger where pid = '$productId'");
+	$resultProductQuantity = mysqli_query($db, "SELECT sum(quantity) as total FROM ledger where pid = '$productId' and tr_type in('Inward','Outward') and services in ('Stock In','Checkout')");
 	
 	$rowProduct = mysqli_fetch_array($queryProductBilling, MYSQLI_ASSOC);
 	$rowProductQuantity = mysqli_fetch_array($resultProductQuantity, MYSQLI_ASSOC);
