@@ -23,7 +23,7 @@ include "db-fetch/query.php";
 			<?php
 				while ($row = mysqli_fetch_array($queryProductView, MYSQLI_ASSOC)) {?>
 						<div class="product-cell col-sm-4">
-							<div class="col-sm-12">
+							<div class="product-img col-sm-12">
 								<img src="<?php echo $row['prd_img']?>"/>
 							</div>
 							<div class="product-info col-sm-12">
@@ -42,7 +42,7 @@ include "db-fetch/query.php";
 									</div>
 								</div>
 							</div>
-								<a href="create-billing?product_id=<?php echo $row['id']; ?>" class="product-view-action btn btn-success">
+								<a href="create-billing?product_sku=<?php echo $row['sku']; ?>&product_id=<?php echo base64_encode($row['id']); ?>" class="product-view-action btn btn-success">
 									Make Billing
 								</a>
 						</div>

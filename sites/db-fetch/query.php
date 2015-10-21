@@ -33,7 +33,7 @@ if (isset($_POST['productRegistration'])) {
 		$productDate = date("Y-m-d");
 		$userby = $_SESSION['login_username'];
 		$resultLedger = mysqli_query($db, "INSERT INTO ledger(id,pid,quantity,tr_type,amount,date,services,user_by) 
-	values ('','$product_id','$productQuantity','Inward', '$productBuyingprice','$productDate','Stock In','$userby')");
+		values ('','$product_id','$productQuantity','Inward', '$productBuyingprice','$productDate','Stock In','$userby')");
 
 		if (!$resultProduct && !$resultLedger) {
 			$_SESSION['upload_message'] = FALSE;
@@ -45,9 +45,15 @@ if (isset($_POST['productRegistration'])) {
 	}
 }
 
-//Product View Page
-$queryProductView = mysqli_query($db, "SELECT * FROM product ORDER BY id DESC");
+ //Product View Page
+	$queryProductView = mysqli_query($db, "SELECT * FROM product ORDER BY id DESC");
 
-//Dealer View Page
-$queryDealerView = mysqli_query($db, "SELECT * FROM dealer ORDER BY id DESC");
+	//Dealer View Page
+	$queryDealerView = mysqli_query($db, "SELECT * FROM dealer ORDER BY id DESC");
+
+	//Product Billing of specific product(id)
+	$productSku = $_GET['product_sku'];
+	$productId = base64_decode($_GET['product_id']);
+	$queryProductBilling = mysqli_query($db, "SELECT * FROM product where id = '$productId' and sku= '$productSku'");
+	$row = mysqli_fetch_array($queryProductBilling, MYSQLI_ASSOC);
 ?>

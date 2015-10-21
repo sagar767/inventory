@@ -1,26 +1,7 @@
-/*------------------------------------------------------------------
- [Master Stylesheet]
-
- Project    	: Aether
- Version		: 1.0
- Last change	: 2015/03/27
- -------------------------------------------------------------------*/
-/*------------------------------------------------------------------
- [Table of contents]
-
- 1. General Structure
- 2. Anchor Link
- 3. Text Outside the Box
- 4. Main Form
- 5. Login Button
- 6. Form Invalid
- 7. Form - Main Message
- 8. Custom Checkbox & Radio
- 9. Misc
- -------------------------------------------------------------------*/
 /*=== 1. General Structure ===*/
 html, body {
-	background: #efefef;
+	background: url("../images/login-bg.png");
+	background-size:cover;
 	padding: 10px;
 	font-family: 'Roboto Condensed' !important;
     font-style: normal;
@@ -28,11 +9,12 @@ html, body {
 }
 /*=== 2. Anchor Link ===*/
 a {
-	color: #aaaaaa;
+	color: #fff;
+	font-weight:400;
 	transition: all ease-in-out 200ms;
 }
 a:hover {
-	color: #333333;
+	color: #fff;
 	text-decoration: none;
 }
 /*=== 3. Text Outside the Box ===*/
@@ -42,6 +24,8 @@ a:hover {
 }
 .etc-login-form p {
 	margin-bottom: 5px;
+	text-align: center;
+	color:#FFFFFF;
 }
 /*=== 4. Main Form ===*/
 .login-form-1 {
@@ -146,22 +130,18 @@ label.form-invalid:after {
 }
 /*=== 7. Form - Main Message ===*/
 .login-form-main-message {
-	background: #ffffff;
-	color: #999999;
-	border-left: 3px solid transparent;
-	border-radius: 3px;
 	margin-bottom: 25px;
-	font-weight: bold;
 	height: 0;
+	text-align:center;
 	padding: 0 20px 0 20px;
 	transition: all ease-in-out 200ms;
 }
 .login-form-main-message span {
 	height: auto;
 	opacity: 1;
-	color: #E94234;
-	font-weight: normal;
-	padding: 10px 20px 10px 20px;
+	color: #fbc936;
+	font-size:1.5em;
+	font-weight: 300;
 }
 .login-form-main-message.success {
 	border-left-color: #2ecc71;
@@ -280,7 +260,7 @@ label:after, [type="radio"]:checked + label:after {
 .logo {
 	padding: 15px 0;
 	font-size: 2.2em;
-	color: #00B3F4;
+	color: #fff;
 	text-align: center;
 }
 label {

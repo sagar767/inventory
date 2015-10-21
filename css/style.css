@@ -120,9 +120,9 @@ footer {
 .product-cell{
 	margin-bottom:60px;
 }
-.product-view img{
+.product-view .product-cell .product-img img{
 	width:100%;
-	height:250px;
+	height:200px;
 }
 .product-info{
 	color: #fff;
@@ -175,5 +175,55 @@ footer {
 	text-decoration: none;
 }
 .view-dealers a{
+	padding-right:5px;
+}
+
+/*Product Billing*/
+.product-billing {
+	color:#BDC3C7;
+	padding: 20px 0;
+}
+.product-billing .product-billing-info{
+	color:#878787;
+	padding: 10px 0;
+}
+.product-billing .product-billing-info .prd{
+	padding:15px 0;
+	text-align: justify;
+}
+.product-billing img{
+	width:100%;
+	height:auto;
+}
+.product-billing .product-billing-info .prd-name{
+	color:#4285F4;
+	font-size:2.8em;
+}
+.product-billing .product-billing-info .prd-catg{
+	color:#FDBE07;
+	font-size:2.5em;
+}
+.product-billing .product-billing-info .prd-base-price{
+	color:#EA4335;
+	font-size:3em;
+}
+.product-billing .product-billing-info .prd-quantity{
+	color:#BDC3C7;
+	font-size:2.5em;
+	padding-left:15px;
+}
+.product-billing .product-billing-info .prd-quantity .stock-message-status{
+	color:brown;
+	font-size:0.4em !important;
+	padding-left:10px;
+	font-weight:400;
+}
+.product-billing .prd-info-details{
+	margin-top:0;
+	color:#34A853;
+}
+.product-billing .prd-info-details label{
+	font-weight:300;
+	color:#919191;
 	padding-right:5px;
 }

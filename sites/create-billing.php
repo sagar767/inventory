@@ -1,7 +1,8 @@
-<?php $title = "Product Registration";
-require_once ("layout/header.php");
-require_once ("layout/primary-nav.php");
-include "db-fetch/query.php";
+<?php 
+ include "db-fetch/query.php";
+ $title = "Billing of - $_productSku ";
+ require_once ("layout/header.php");
+ require_once ("layout/primary-nav.php");
 ?>
 
 <div class="container">
@@ -14,42 +15,47 @@ include "db-fetch/query.php";
 		<div class="col-sm-9">
 
 			<!-- column 2 -->
-			<h3><i class="glyphicon glyphicon-barcode"></i> Create Billing</h3>
+			<h3><i class="glyphicon glyphicon-barcode"></i>  Billing of Product SKU - <?php echo $row['sku'];?> </h3>
 			<hr>
 			<div class="row">
 				<!-- center left-->
-				<div class="product-view col-sm-12">
-			<?php
-				while ($row = mysqli_fetch_array($queryProductView, MYSQLI_ASSOC)) {?>
-						<div class="product-cell col-sm-4">
-							<div class="col-sm-12">
-								<img src="<?php echo $row['prd_img']?>"/>
+				<div class="product-billing col-sm-12">
+					<div class="col-sm-6">
+						<img src="<?php echo $row['prd_img']?>"/>
+					</div>
+					<div class="product-billing-info col-sm-6">
+						<div class="prd prd-name col-sm-11 col-sm-offset-1"><?php echo $row['prd_name']; ?></div>
+						<?php if($row['prd_quantity'] < 2){ ?>
+							<div class="alert alert-danger prd prd-quantity col-sm-11 col-sm-offset-1">
+								<i class="fa fa-shopping-cart"></i>
+								<?php echo $row['prd_quantity']; ?> Item Available
 							</div>
-							<div class="product-info col-sm-12">
-								<div class="col-sm-8">
-									<div class="sku col-sm-12">
-										<?php echo $row['sku']; ?>
-									</div>
-									<div class="prd-name col-sm-12">
-										<?php echo $row['prd_name']; ?>
-									</div>
-									<div class="prd-catg col-sm-12">
-										<?php echo $row['prd_catg']; ?>
-									</div>
-								</div>
-								<div class="col-sm-4">
-									<div class="prd-base-price col-sm-12">
-										<?php echo $row['prd_base_price']; ?>
-									</div>
-								</div>
-								</div>
-								<a href="create-billing<?php echo $row['id']; ?>" class="product-view-action btn btn-success">
-									Make Billing
-								</a>
+						<?php } else if($row['prd_quantity'] < 5) { ?>
+							<div class="alert alert-warning prd prd-quantity col-sm-11 col-sm-offset-1">
+								<i class="fa fa-shopping-cart"></i>
+								<?php echo $row['prd_quantity']; ?> Items Available
+								<p class="stock-message-status">Stock running low.Contact the Dealer</p>
+							</div>
+						<?php } else{ ?>
+							<div class="prd prd-quantity col-sm-11 col-sm-offset-1">
+									<i class="fa fa-shopping-cart"></i>
+									<?php echo $row['prd_quantity']; ?> Items Available
+							</div>
+						<?php } ?>
+						<div class="prd prd-catg col-sm-11 col-sm-offset-1">
+							<i class="fa fa-tag"></i> 
+							<?php echo $row['prd_catg']; ?>
 						</div>
-				<?php }
-			?>
-				</div><!--/col-->
+						<div class="prd prd-base-price col-sm-11 col-sm-offset-1">
+							&#8377;<?php echo $row['prd_base_price']; ?>
+						</div>
+						<div class="prd prd-info-details col-sm-11 col-sm-offset-1">
+							<label>Product Desctiption-</label>
+							<?php echo $row['prd_details']; ?>
+						</div>
+					</div>
+				</div>	
+				
 			</div><!--/row-->
 		</div><!--/col-span-9-->
 
