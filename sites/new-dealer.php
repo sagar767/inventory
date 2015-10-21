@@ -44,7 +44,7 @@ require_once ("layout/primary-nav.php");
 										<label class="control-label">Dealer Email Address</label>
 										<input maxlength="100" type="email" required="required" class="form-control" id="dealer_email" placeholder="Enter Email Address" />
 									</div>
-									<button class="btn btn-warning nextBtn btn-lg pull-right" id="dealerRegistry" type="button" >
+									<button class="btn btn-success nextBtn btn-lg pull-right" id="dealerRegistry" type="button" >
 										Complete Registration
 									</button>
 								</div>

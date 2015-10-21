@@ -4,9 +4,18 @@ body{
 	font-family: 'Roboto Condensed' !important;
     font-style: normal;
     font-weight: 300;
+    color:#999999;
 }
 .navbar-static-top {
 	margin-bottom: 20px;
+}
+#top-nav .navbar-header a,
+.navbar-inverse .navbar-nav>li>a{
+	color:#F6F6F6!important;
+}
+.navbar-inverse{
+	background : url("../images/bg-black.png") repeat 0 0;
+	border-bottom: 3px solid #FBC936;
 }
 
 footer {
@@ -166,7 +175,11 @@ footer {
 .product-info .prd-catg{
 	padding-top:5px;
 }
-
+/*Dealer Registration Form*/
+#dealerRegistration label{
+	font-weight:300;
+	color:#E74C3C;
+}
 /*Dealer View Details*/
 .view-dealers tr th{
 	font-weight:400;
