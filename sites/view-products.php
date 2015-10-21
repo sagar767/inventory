@@ -32,7 +32,9 @@ include "db-fetch/query.php";
 											<?php echo $row['sku']; ?>
 										</div>
 										<div class="prd-base-price col-sm-6">
-											<?php echo $row['prd_base_price']; ?>
+											&#8377;<?php $commission = (($row['prd_base_price'] * $row['prd_com'])/100);
+												  $actual_price = ($row['prd_base_price'] + $commission);
+											 echo $actual_price; ?>
 										</div>
 									<div class="prd-name col-sm-12">
 											<?php echo $row['prd_name']; ?>

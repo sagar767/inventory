@@ -47,7 +47,7 @@ include "db-fetch/query.php";
 							<td><?php echo $row['phone']; ?></td>
 							<td><?php echo $row['email']; ?></td>
 							<td>
-							<a style="color: #E15639; font-size: 1.3em;" href="#" id="<?php echo $row['id']; ?>" class="delete">
+							<a disabled style="color: #E15639; font-size: 1.3em;" href="#" id="<?php echo $row['id']; ?>" class="delete">
                                <i class="fa fa-trash-o"></i>
                            </a>
                            <a style="color: #7388B6; font-size: 1.3em;" href="#">

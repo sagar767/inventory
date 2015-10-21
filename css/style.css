@@ -6,6 +6,9 @@ body{
     font-weight: 300;
     color:#999999;
 }
+.footer-container{
+	border-top:2px solid #F0AD4E;
+}
 hr{
 	clear: both;
 }
@@ -18,7 +21,7 @@ hr{
 }
 .navbar-inverse{
 	background : url("../images/bg-black.png") repeat 0 0;
-	border-bottom: 3px solid #FBC936;
+	border-bottom: 2px solid #4285F4;
 }
 
 footer {
@@ -141,7 +144,7 @@ footer {
 }
 .product-info{
 	color: #fff;
-    z-index: 999999;
+    z-index: 999;
     background: url("../images/bg-black.png") repeat 0 0;
     height: 95px;
     position: relative;
@@ -247,7 +250,11 @@ footer {
 	color:#919191;
 	padding-right:5px;
 }
-
+.per-unit{
+	font-weight:200;
+	font-size:0.35em;
+	color:#999999;
+}
 /*Product Billing*/
 .input-group{
 	margin-bottom: 15px;
