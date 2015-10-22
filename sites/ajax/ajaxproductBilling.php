@@ -1,6 +1,6 @@
 <?php
 include ("../../configure/connection.php");
-//session_start();
+session_start();
 if (isset($_POST['customerName']) && isset($_POST['productBasePrice']) && isset($_POST['productUserBy']) && isset($_POST['productActualPrice']) && isset($_POST['productCommission']) && isset($_POST['customerEmail']) && isset($_POST['customerPhone']) && isset($_POST['paymentMode']) && isset($_POST['productQuantity']) && isset($_POST['productId'])) {
 	$customerName = mysqli_real_escape_string($db, $_POST['customerName']);
 	$customerEmail = mysqli_real_escape_string($db, $_POST['customerEmail']);
@@ -13,6 +13,24 @@ if (isset($_POST['customerName']) && isset($_POST['productBasePrice']) && isset(
 	$productBasePrice = mysqli_real_escape_string($db, $_POST['productBasePrice']);
 	$productUserBy= mysqli_real_escape_string($db, $_POST['productUserBy']);
 	$date =  date("Y-m-d");
+	
+	$resultProductName = mysqli_query($db, "SELECT * FROM product where id = '$productId'");
+	$rowProductName = mysqli_fetch_array($resultProductName, MYSQLI_ASSOC);
+	
+	$productName = $rowProductName['prd_name'];
+	$productSku = $rowProductName['sku'];
+	$productCategory = $rowProductName['prd_catg'];
+	
+	$_SESSION['customerName'] = $customerName;
+	$_SESSION['customerEmail'] = $customerEmail;
+	$_SESSION['customerPhone'] = $customerPhone;
+	$_SESSION['productName'] = $productName;
+	$_SESSION['productSku'] = $productSku;
+	$_SESSION['productCategory'] = $productCategory;
+	$_SESSION['paymentMode'] = $paymentMode;
+	$_SESSION['productQuantity'] = $productQuantity;
+	$_SESSION['productBillingAmount'] = $productBasePrice*$productQuantity;
+	$_SESSION['date'] = $date;
 	
 	$resultProductQuantity = mysqli_query($db, "SELECT sum(quantity) as total FROM ledger where pid = '$productId' and tr_type in('Inward','Outward') and services in ('Stock In','Checkout')");
 	$row = mysqli_fetch_array($resultProductQuantity, MYSQLI_ASSOC);

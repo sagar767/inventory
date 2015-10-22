@@ -211,9 +211,7 @@ $(document).ready(function() {
 				},
 				success : function(data) {
 					if (data) {
-						$("#status").html("<div class='alert alert-success'>Billing Created Successfully</div>");
-						  $("#productBilling input[type=text]").val("");
-						   $("#productBilling input[type=email]").val("");
+						window.location.href="generatepdfreport.php";
 					} else {
 						$("#status").html("<span class='alert alert-danger'>Product Billing Incomplete!</span>");
 					}
