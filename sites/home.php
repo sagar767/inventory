@@ -3,7 +3,28 @@ require_once ("layout/header.php");
 require_once ("layout/primary-nav.php");
 include "db-fetch/query.php";
 ?>
+<script type="text/javascript">
+        $(document).ready(function () {
 
+            $.getJSON("dashboard.php", function (result) {
+                var chart = new CanvasJS.Chart("chartContainer", {
+                	title: {
+					text: "Product Stock Amount"
+					},
+                	animationEnabled: true,
+                    data: [
+                        {
+                        	type: "spline",
+                        	showInLegend: true,
+                            dataPoints: result
+                        }
+                    ]
+                });
+                chart.render();
+            });
+        });
+</script>
+    
 <div class="container">
 	<!-- upper section -->
 	<div class="row">
@@ -12,7 +33,7 @@ include "db-fetch/query.php";
 		require_once ("layout/sidebar-nav.php");
 		?>
 
-		<div class="col-sm-9">
+		<div class="col-sm-9 dashboard">
 
 			<!-- column 2 -->
 			<h3><i class="glyphicon glyphicon-dashboard"></i> Dashboard</h3>
@@ -27,30 +48,7 @@ include "db-fetch/query.php";
 						<div class="panel-heading">
 							<h4>Product Overview</h4>
 						</div>
-						<div class="panel-body">
-
-							<small>Total Profit</small>
-							<div class="progress">
-								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
-									<span class="sr-only">72% Complete</span>
-								</div>
-							</div>
-							<hr>
-							<small>Total Selling</small>
-							<div class="progress">
-								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-									<span class="sr-only">20% Complete</span>
-								</div>
-							</div>
-							<hr>
-							<small>Total Buying</small>
-							<div class="progress">
-								<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-									<span class="sr-only">80% Complete</span>
-								</div>
-							</div>
-
-						</div><!--/panel-body-->
+					 <div id="chartContainer" style="width: 480px; height: 250px;"></div>
 					</div><!--/panel-->
 
 				</div><!--/col-->
@@ -63,6 +61,7 @@ include "db-fetch/query.php";
 		</div><!--/col-span-9-->
 
 	</div>
+
 </div>
 
 <?php

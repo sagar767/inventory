@@ -6,6 +6,9 @@
 		<title><?php echo $title; ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+	<script src="../js/jquery.min.js" type="text/javascript"></script>
+	<script src="../js/canvasjs.js" type="text/javascript"></script>
+
 	<!-- All the files that are required -->
 	<link rel="stylesheet" type="text/css" href="../css/roboto-condensed.css">
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">

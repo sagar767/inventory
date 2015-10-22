@@ -282,3 +282,8 @@ a.toggle-close {
 .view-reports a i{
 	font-size:1.5em;
 }
+
+/*Dashboard*/
+.dashboard{
+	margin-bottom:150px;
+}
