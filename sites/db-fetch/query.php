@@ -64,8 +64,11 @@ if (isset($_POST['productRegistration'])) {
 	$rowProductQuantity = mysqli_fetch_array($resultProductQuantity, MYSQLI_ASSOC);
 
 	//Product Report View Default group by product
-	$queryReport = mysqli_query($db, "SELECT product.sku,product.prd_name,product.prd_catg,sum(ledger.amount) as total,
-								sum(ledger.quantity) as quantity,ledger.pid
+	$queryReport = mysqli_query($db, "SELECT product.sku,product.prd_name,product.prd_catg,
+								sum(ledger.amount) as total,
+								sum(case when services = 'Stock In' then quantity end) as stck,
+								sum(case when services = 'Checkout' then quantity end) as qnt,
+								ledger.pid
 								FROM product
 								LEFT JOIN ledger
 								ON product.id=ledger.pid

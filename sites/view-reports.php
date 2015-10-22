@@ -38,13 +38,14 @@ include "db-fetch/query.php";
 						<?php 
 						$i = 1;
 						while ($rowReport = mysqli_fetch_array($queryReport,MYSQLI_ASSOC)) {
-						if($rowReport['quantity']<=2){?>
+						$totalQuantity = $rowReport['stck'] + $rowReport['qnt']; 
+						if($totalQuantity<=2){?>
 						<tr class="alert alert-danger">
 							<td><?php echo $i; ?></td>
 							<td><?php echo $rowReport['sku']; ?></td>
 							<td><?php echo $rowReport['prd_name']; ?></td>
 							<td><?php echo $rowReport['prd_catg']; ?></td>
-							<td><?php echo $rowReport['quantity']; ?></td>
+							<td><?php echo $totalQuantity; ?></td>
 							<td><?php echo $rowReport['total']; ?></td>
 							<td>
 								<a href="view-reports-by-id?product_sku=<?php echo base64_encode($rowReport['sku']); ?>&product_id=<?php echo base64_encode($rowReport['pid']); ?>">
@@ -58,7 +59,7 @@ include "db-fetch/query.php";
 							<td><?php echo $rowReport['sku']; ?></td>
 							<td><?php echo $rowReport['prd_name']; ?></td>
 							<td><?php echo $rowReport['prd_catg']; ?></td>
-							<td><?php echo $rowReport['quantity']; ?></td>
+							<td><?php echo $totalQuantity; ?></td>
 							<td><?php echo $rowReport['total']; ?></td>
 							<td>
 								<a href="view-reports-by-id?product_sku=<?php echo base64_encode($rowReport['sku']); ?>&product_id=<?php echo base64_encode($rowReport['pid']); ?>">
