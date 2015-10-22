@@ -10,7 +10,7 @@ if (isset($_POST['productRegistration'])) {
 	$productImagePath = "uploads/products/" . $productImage;
 	move_uploaded_file($_FILES["productImage"]["tmp_name"], $productImagePath);
 	if($productImage == ""){
-		$productImagePath = "http://www.safteq.com/wp-content/uploads/2015/08/blank-product-w320.png";
+		$productImagePath = "uploads/products/"."no_image.jpg";
 	}
 	$productSku = $_POST['product_sku'];
 	$productName = mysqli_real_escape_string($db, $_POST['product_name']);
@@ -78,4 +78,18 @@ if (isset($_POST['productRegistration'])) {
 	$productSku = base64_decode($_GET['product_sku']);
 	$productId = base64_decode($_GET['product_id']);
 	$queryReportbyProductId = mysqli_query($db, "SELECT product.sku,product.prd_name,ledger.* from product,ledger where ledger.pid='$productId' and product.id = '$productId' order by ledger.date desc");
+	
+	//Dashboard Summary
+	$resultTotalSell = mysqli_query($db, "SELECT sum(amount) as total FROM ledger where tr_type= 'Outward' and services = 'Checkout'");
+	$resultTotalBuyin = mysqli_query($db, "SELECT sum(amount) as total FROM ledger where tr_type= 'Inward' and services = 'Stock In'");
+	$resultTotalProfit = mysqli_query($db, "SELECT sum(amount) as total FROM ledger where tr_type= 'Outward' and services = 'Profit'");
+	$resultDealerCount = mysqli_query($db, "SELECT count(id) as totalCountDealer FROM dealer");
+	$resultProductCount = mysqli_query($db, "SELECT count(id) as totalCountProduct FROM product");
+	
+	$rowSell = mysqli_fetch_array($resultTotalSell, MYSQLI_ASSOC);
+	$rowSell = $rowSell['total']*-1;
+	$rowBuyin = mysqli_fetch_array($resultTotalBuyin, MYSQLI_ASSOC);
+	$rowProfit = mysqli_fetch_array($resultTotalProfit, MYSQLI_ASSOC);
+	$rowCountDealer = mysqli_fetch_array($resultDealerCount, MYSQLI_ASSOC);
+	$rowCountProduct = mysqli_fetch_array($resultProductCount, MYSQLI_ASSOC);
 	

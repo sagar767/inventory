@@ -5,11 +5,10 @@ include "db-fetch/query.php";
 ?>
 <script type="text/javascript">
         $(document).ready(function () {
-
             $.getJSON("dashboard.php", function (result) {
                 var chart = new CanvasJS.Chart("chartContainer", {
                 	title: {
-					text: "Product Stock Amount"
+					text: "Product Wise Stock"
 					},
                 	animationEnabled: true,
                     data: [
@@ -42,15 +41,36 @@ include "db-fetch/query.php";
 
 			<div class="row">
 				<!-- center left-->
-				<div class="col-md-7">
-
+				<div class="col-md-8">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4>Product Overview</h4>
 						</div>
-					 <div id="chartContainer" style="width: 480px; height: 250px;"></div>
+					 <div id="chartContainer" style="width: 550px; height: 320px;"></div>
 					</div><!--/panel-->
-
+					<div class="dashboard-summary">
+						<p>Dashboard Summary</p>
+						<div class="col-md-6 alert alert-info total-stockin">
+							<p>Total Selling Amount</p>
+							<span>&#8377;<?php echo $rowSell;?></span>
+						</div>
+						<div class="col-md-6 alert alert-warning total-buyin">
+							<p>Total BuyIn Amount</p>
+							<span>&#8377;<?php echo $rowBuyin['total'];?></span>
+						</div>
+						<div class="col-md-6 alert alert-success total-profit">
+							<p>Total Profit Amount</p>
+							<span>&#8377;<?php echo $rowProfit['total'];?></span>
+						</div>
+						<div class="col-md-6 alert alert-danger total-dealer">
+							<p>No. of Dealers</p>
+							<span><?php echo $rowCountDealer['totalCountDealer'];?></span>
+						</div>
+						<div class="col-md-6 alert alert-warning total-product">
+							<p>No. of Product Types</p>
+							<span><?php echo $rowCountProduct['totalCountProduct'];?></span>
+						</div>
+					</div>
 				</div><!--/col-->
 
 				<!--center-right-->

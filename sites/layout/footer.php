@@ -6,8 +6,8 @@
            <a class="btn btn-info" href="mailto:sagar767@gmail.com?Subject=Requesting%20A%20Demo" target="_blank" >Request A Demo</a>
       </p>
       
-      <a href="https://github.com/sagar767" target="_blank" class="navbar-btn btn-danger btn pull-right">
-      <span class="fa fa-github"></span>  Follow Me On Github</a>
+      <a href="https://github.com/sagar767" target="_blank" class="navbar-btn btn-default btn pull-right">
+      <span class="fa fa-github"></span>  Fork On Github</a>
     </div>
     <a href="#" class="toggle-close">
     	<i class="fa fa-arrow-circle-down"></i>

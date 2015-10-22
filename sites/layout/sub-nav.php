@@ -1,4 +1,4 @@
-<div class="col-md-5">
+<div class="col-md-4 subnav">
 
 	<ul class="nav nav-justified">
 		<li>
@@ -20,10 +20,10 @@
 			</ul>
 		</li>
 		<li>
-			<a href="#"><i class="glyphicon glyphicon-user"></i></a>
+			<a href="view-dealers"><i class="glyphicon glyphicon-user"></i></a>
 		</li>
 		<li>
-			<a title="Add Widget" data-toggle="modal" href="#addWidgetModal"> <span class="glyphicon glyphicon-dashboard"></span> </a>
+			<a title="Add Widget" data-toggle="modal" href="home"> <span class="glyphicon glyphicon-dashboard"></span> </a>
 		</li>
 	</ul>
 
@@ -38,16 +38,16 @@ The scope of inventory management concerns the fine lines between replenishment 
 	<hr>
 
 	<div class="btn-group btn-group-justified">
-		<a href="new-product" class="btn btn-info col-sm-3"> <i class="glyphicon glyphicon-plus"></i>
+		<a href="new-product" class="btn btn-warning col-sm-12"> <i class="glyphicon glyphicon-plus"></i>
 		<br>
 		Product </a>
-		<a href="new-dealer" class="btn btn-info col-sm-3"> <i class="glyphicon glyphicon-plus"></i>
+		<a href="new-dealer" class="btn btn-danger col-sm-12"> <i class="glyphicon glyphicon-plus"></i>
 		<br>
 		Dealer </a>
-		<a href="#" class="btn btn-info col-sm-3"> <i class="glyphicon glyphicon-cog"></i>
+		<a href="#" class="btn btn-info col-sm-12"> <i class="glyphicon glyphicon-cog"></i>
 		<br>
 		Tools </a>
-		<a href="#" class="btn btn-info col-sm-3"> <i class="glyphicon glyphicon-question-sign"></i>
+		<a href="#" class="btn btn-success col-sm-12"> <i class="glyphicon glyphicon-question-sign"></i>
 		<br>
 		Help </a>
 	</div>

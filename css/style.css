@@ -5,12 +5,24 @@ body{
 	font-family: 'Roboto Condensed' !important;
     font-style: normal;
     font-weight: 300;
-    color:#999999;
+    color:#555555;
 }
 hr{
 	clear: both;
 }
 
+/*Sub Navigation Styling*/
+.subnav p{
+	text-align: justify;
+}
+.btn-group-justified a{
+	width:100%!important;
+	border-radius:0;
+	margin-bottom:2px;
+}
+.btn-group-justified>.btn{
+	display:block;
+}
 /*Footer Part*/
 .footer-container{
 	border-top:2px solid #CCCCCC;
@@ -149,7 +161,7 @@ a.toggle-close {
 }
 .view-products a{
 	width: 50%;
-    font-size: 1em;
+    font-size: 1.1em;
     padding: 10px;
     margin-right: -3px;
     margin-top: -20px;
@@ -159,7 +171,7 @@ a.toggle-close {
 	color: #fff;
     z-index: 999;
     background: url("../images/bg-black.png") repeat 0 0;
-    height: 95px;
+    height: 100px;
     position: relative;
     top: -20px;
 }
@@ -186,16 +198,18 @@ a.toggle-close {
 }
 .product-info .prd-name{
 	font-weight:bolder;
-	padding-top:5px;
+	padding-top:0;
 	font-size:1.3em;
 }
 .product-info .prd-base-price{
 	padding-top:10px;
 	font-size:1.5em;
 	font-weight:bolder;
+	padding-left: 45px;
 }
 .product-info .prd-catg{
 	padding-top:5px;
+	padding-bottom:5px;
 }
 /*Dealer Registration Form*/
 #dealerRegistration label{
@@ -286,4 +300,16 @@ a.toggle-close {
 /*Dashboard*/
 .dashboard{
 	margin-bottom:150px;
+}
+.dashboard-summary{
+	font-weight:300;
+	font-size:2em;
+	margin-top:-50px;
+}
+.dashboard-summary .alert{
+	border-radius:0;
+	margin-right:0;
+}
+.dashboard-summary .alert span{
+	font-weight:400;
 }
