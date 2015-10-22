@@ -47,6 +47,36 @@ if (isset($_POST['productRegistration'])) {
 	}
 }
 
+	//Product Update
+	if (isset($_POST['updateProductRegistration'])){
+	$productId = $_POST['product_id'];
+	$productSku = $_POST['product_sku'];
+	$productName = mysqli_real_escape_string($db, $_POST['product_name']);
+	$productDetails = mysqli_real_escape_string($db, $_POST['product_details']);
+	$productQuantity = mysqli_real_escape_string($db, $_POST['product_quantity']);
+	$productCategory = mysqli_real_escape_string($db, $_POST['product_category']);
+	$productBuyingprice = mysqli_real_escape_string($db, $_POST['product_buying_price']);
+	$productCommission = mysqli_real_escape_string($db, $_POST['product_commission']);
+	$productDealer = mysqli_real_escape_string($db, $_POST['product_dealer']);
+	
+	$productTotalBuyingAmount = ($productQuantity*$productBuyingprice);
+	
+	$resultProductUpdate = mysqli_query($db, "update product set prd_name = '$productName',prd_details='$productDetails',
+										prd_base_price = '$productBuyingprice',prd_com = '$productCommission',
+										dealer_id='$productDealer',prd_catg='$productCategory',prd_quantity='$productQuantity' 
+										where id='$productId'");
+
+	$resultLedgerUpdate = mysqli_query($db, "update ledger set quantity='$productQuantity',amount = '$productTotalBuyingAmount' where pid='$productId'");
+
+	if (!$resultProductUpdate && !$resultLedgerUPdate) {
+			$_SESSION['update_message'] = FALSE;
+			header("Location:../sites/new-product");
+	} else {
+			$_SESSION['update_message'] = TRUE;
+			header("Location:../sites/new-product");
+		}
+	}
+	
  	//Product View Page
 	$queryProductView = mysqli_query($db, "SELECT * FROM product ORDER BY id DESC");
 

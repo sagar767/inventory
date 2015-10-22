@@ -5,6 +5,9 @@
 		<meta charset="utf-8">
 		<title><?php echo $title; ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="Inventory Managment System - Minor Project on PHP by Tamaghna Banerjee">
+  		<link rel="shortcut icon" href="../images/inventory.ico" />
+ 
 
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/canvasjs.js" type="text/javascript"></script>

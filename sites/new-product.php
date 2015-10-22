@@ -23,6 +23,12 @@ include "db-fetch/query.php"
 					<?php if($_SESSION['upload_message'] == 1){ ?>
 					<div class="status alert alert-success">
 						Product Successfully Created/Registered.
+						<?php //unset($_SESSION['upload_message']); ?>
+					</div>
+					<?php } else if($_SESSION['update_message'] == 1){ ?>
+					<div class="status alert alert-success">
+						Product Updated Successfully.
+						<?php //unset($_SESSION['update_message']); ?>
 					</div>
 					<?php } ?>
 					<div class="panel panel-default">
@@ -61,6 +67,7 @@ include "db-fetch/query.php"
 												<label class="control-label">Product SKU</label>
 												<?php if(!empty($rowProduct['sku'])){ ?>
 												<input name="product_sku" maxlength="100" readonly type="text" value="<?php echo $rowProduct['sku']; ?>" required="required" class="form-control" placeholder="Enter SKU"  />
+												<input name="product_id" type="hidden" value="<?php echo $productId; ?>"/>
 												<?php } else{ ?>
 													<input name="product_sku" maxlength="100" readonly type="text" value="<?php echo "PDI" . mt_rand(); ?>" required="required" class="form-control" placeholder="Enter SKU"  />
 												<?php } ?>
@@ -151,7 +158,7 @@ include "db-fetch/query.php"
 										</div>
 									</div>
 								</div>
-
+								
 								<div class="row setup-content" id="step-3">
 									<div class="col-xs-9 col-md-offset-1">
 										<div class="col-md-12">
@@ -176,7 +183,7 @@ include "db-fetch/query.php"
 											<?php if(!empty($rowProduct['prd_base_price'])){ ?>
 											<input class="btn btn-success btn-lg pull-right" name="updateProductRegistration" type="submit" value="Update Product"/>
 											<?php } else{ ?>
-												<input class="btn btn-success btn-lg pull-right" name="productRegistration" type="submit" value="Complete Registration"/>
+											<input class="btn btn-success btn-lg pull-right" name="productRegistration" type="submit" value="Complete Registration"/>
 											<?php } ?>
 										</div>
 									</div>
