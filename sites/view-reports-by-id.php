@@ -15,12 +15,12 @@ include "db-fetch/query.php";
 		<div class="col-sm-9">
 
 			<!-- column 2 -->
-			<h3><i class="glyphicon glyphicon-user"></i> View Reports</h3>
+			<h3><i class="fa fa-bar-chart"></i> View Transactional Report of - <?php echo $productSku;?></h3>
 			<hr>
 			<div class="row view-reports">
 				<!-- center left-->
 				<p class="alert alert-info">
-					Manage Report Details.Use Filter to search particular report.
+					View Individual Product Date Wise.
 				</p>
 				<table class="table table-hover table-responsive">
 					<thead>

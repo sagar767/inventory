@@ -77,5 +77,5 @@ if (isset($_POST['productRegistration'])) {
 	//Product Report View Default by product id
 	$productSku = base64_decode($_GET['product_sku']);
 	$productId = base64_decode($_GET['product_id']);
-	$queryReportbyProductId = mysqli_query($db, "SELECT product.sku,product.prd_name,ledger.* from product,ledger where ledger.pid='$productId' and product.id = '$productId'");
+	$queryReportbyProductId = mysqli_query($db, "SELECT product.sku,product.prd_name,ledger.* from product,ledger where ledger.pid='$productId' and product.id = '$productId' order by ledger.date desc");
 	
