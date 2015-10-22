@@ -161,7 +161,7 @@ a.toggle-close {
 }
 .view-products a{
 	width: 50%;
-    font-size: 1.1em;
+    font-size: 1.2em;
     padding: 10px;
     margin-right: -3px;
     margin-top: -20px;
@@ -194,7 +194,8 @@ a.toggle-close {
 }
 .product-info .sku{
 	font-weight:normal;
-	padding-top:5px;
+	padding-top: 10px;
+    padding-left: 0;
 }
 .product-info .prd-name{
 	font-weight:bolder;

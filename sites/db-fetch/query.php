@@ -61,8 +61,13 @@ if (isset($_POST['productRegistration'])) {
 	$resultProductQuantity = mysqli_query($db, "SELECT sum(quantity) as total FROM ledger where pid = '$productId' and tr_type in('Inward','Outward') and services in ('Stock In','Checkout')");
 	
 	$rowProduct = mysqli_fetch_array($queryProductBilling, MYSQLI_ASSOC);
+	$dealer_id = $rowProduct["dealer_id"];
+	
+	$resultDealer = mysqli_query($db, "SELECT * FROM dealer where id = '$dealer_id'");
+	$rowDealer = mysqli_fetch_array($resultDealer, MYSQLI_ASSOC);
+	
 	$rowProductQuantity = mysqli_fetch_array($resultProductQuantity, MYSQLI_ASSOC);
-
+	
 	//Product Report View Default group by product
 	$queryReport = mysqli_query($db, "SELECT product.sku,product.prd_name,product.prd_catg,
 								sum(ledger.amount) as total,

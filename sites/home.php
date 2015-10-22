@@ -51,15 +51,15 @@ include "db-fetch/query.php";
 					<div class="dashboard-summary">
 						<p>Dashboard Summary</p>
 						<div class="col-md-6 alert alert-info total-stockin">
-							<p>Total Selling Amount</p>
+							<p>Total Selling</p>
 							<span>&#8377;<?php echo $rowSell;?></span>
 						</div>
 						<div class="col-md-6 alert alert-warning total-buyin">
-							<p>Total BuyIn Amount</p>
+							<p>Total BuyIn</p>
 							<span>&#8377;<?php echo $rowBuyin['total'];?></span>
 						</div>
 						<div class="col-md-6 alert alert-success total-profit">
-							<p>Total Profit Amount</p>
+							<p>Total Profit</p>
 							<span>&#8377;<?php echo $rowProfit['total'];?></span>
 						</div>
 						<div class="col-md-6 alert alert-danger total-dealer">
