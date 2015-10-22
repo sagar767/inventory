@@ -5,7 +5,9 @@
 		<meta charset="utf-8">
 		<title>Login - Inventory</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+		<meta name="description" content="Inventory Managment System - Minor Project on PHP by Tamaghna Banerjee">
+  		<link rel="shortcut icon" href="images/inventory.ico" />
+  		
 	<!-- All the files that are required -->
 	<link rel="stylesheet" type="text/css" href="css/roboto-condensed.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
