@@ -3,10 +3,10 @@
   <div class="footer-container navbar navbar-default navbar-fixed-bottom">
     <div class="container">
       <p class="navbar-text pull-left">© <?php echo date('Y'); ?> - Site Built by Sagar Biswas.
-           <a class="btn btn-success" href="mailto:sagar767@gmail.com?Subject=Requesting%20A%20Demo" target="_blank" >Request A Demo</a>
+           <a class="btn btn-info" href="mailto:sagar767@gmail.com?Subject=Requesting%20A%20Demo" target="_blank" >Request A Demo</a>
       </p>
       
-      <a href="https://github.com/sagar767" target="_blank" class="navbar-btn btn-warning btn pull-right">
+      <a href="https://github.com/sagar767" target="_blank" class="navbar-btn btn-danger btn pull-right">
       <span class="fa fa-github"></span>  Follow Me On Github</a>
     </div>
     <a href="#" class="toggle-close">

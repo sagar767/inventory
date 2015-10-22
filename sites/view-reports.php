@@ -1,4 +1,4 @@
-<?php $title = "View Dealers";
+<?php $title = "View Reports";
 require_once ("layout/header.php");
 require_once ("layout/primary-nav.php");
 include "db-fetch/query.php";

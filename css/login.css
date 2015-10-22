@@ -1,11 +1,27 @@
 /*=== 1. General Structure ===*/
 html, body {
-	background: url("../images/login-bg.png");
+	background: url("../images/bg.jpg");
 	background-size:cover;
 	padding: 10px;
 	font-family: 'Roboto Condensed' !important;
     font-style: normal;
     font-weight: 300;
+}
+/*Powered by in footer*/
+.powered-by{
+	margin:0 auto;
+	margin-top:100px;
+	float:none;
+}
+.powered-by .powered-by-slogan{
+	color:#fff;
+	font-weight:400;
+	font-size:1.8em;
+	margin-bottom:-70px;
+}
+.powered-by img{
+	width: 100%;
+	height:auto;
 }
 /*=== 2. Anchor Link ===*/
 a {
@@ -139,7 +155,7 @@ label.form-invalid:after {
 .login-form-main-message span {
 	height: auto;
 	opacity: 1;
-	color: #fbc936;
+	color: #f8ce14;
 	font-size:1.5em;
 	font-weight: 300;
 }

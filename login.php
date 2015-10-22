@@ -56,6 +56,10 @@ header('Location: sites/home');
 	</div>
 	<!-- end:Main Form -->
 </div>
+	<div class="powered-by col-md-3">
+		<p class="powered-by-slogan">Powered By</p>
+		<img src="images/powered-by.png"/>
+	</div>
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="js/jquery.ui.shake.min.js" type="text/javascript"></script>

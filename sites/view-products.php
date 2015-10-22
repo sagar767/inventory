@@ -47,6 +47,9 @@ include "db-fetch/query.php";
 								<a href="create-billing?product_sku=<?php echo base64_encode($row['sku']); ?>&product_id=<?php echo base64_encode($row['id']); ?>" class="product-view-action btn btn-success">
 									Make Billing
 								</a>
+								<a href="create-billing?product_sku=<?php echo base64_encode($row['sku']); ?>&product_id=<?php echo base64_encode($row['id']); ?>" class="product-view-action btn btn-warning">
+									Stock Update
+								</a>
 						</div>
 				<?php }
 			?>

@@ -30,11 +30,10 @@
 	<hr>
 
 	<p>
-		This is a responsive dashboard-style layout that uses <a href="http://www.getbootstrap.com">Bootstrap 3</a>. You can use this template as a starting point to create something more unique.
-	</p>
-	<p>
-		Visit the Bootstrap Playground at <a href="http://www.bootply.com">Bootply</a> to tweak this layout, or discover 1000's of Bootstrap code examples and snippets.
-	</p>
+Inventory management is a science primarily about specifying the shape and percentage of stocked goods. It is required at different locations within a facility or within many locations of a supply network to precede the regular and planned course of production and stock of materials.
+</p>
+<p>
+The scope of inventory management concerns the fine lines between replenishment lead time, carrying costs of inventory, asset management.</p>
 
 	<hr>
 

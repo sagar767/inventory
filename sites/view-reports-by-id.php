@@ -1,7 +1,8 @@
-<?php $title = "View Dealers";
+<?php 
+include "db-fetch/query.php";
+$title = "View Reports - $productSku ";
 require_once ("layout/header.php");
 require_once ("layout/primary-nav.php");
-include "db-fetch/query.php";
 ?>
 
 <div class="container">
