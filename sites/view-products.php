@@ -19,7 +19,7 @@ include "db-fetch/query.php";
 			<hr>
 			<div class="row">
 				<!-- center left-->
-				<div class="product-view col-sm-12">
+				<div class="view-products col-sm-12">
 			<?php
 				while ($row = mysqli_fetch_array($queryProductView, MYSQLI_ASSOC)) {?>
 						<div class="product-cell col-sm-4">

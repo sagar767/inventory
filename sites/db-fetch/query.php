@@ -47,7 +47,7 @@ if (isset($_POST['productRegistration'])) {
 	}
 }
 
- //Product View Page
+ 	//Product View Page
 	$queryProductView = mysqli_query($db, "SELECT * FROM product ORDER BY id DESC");
 
 	//Dealer View Page
@@ -62,4 +62,17 @@ if (isset($_POST['productRegistration'])) {
 	
 	$rowProduct = mysqli_fetch_array($queryProductBilling, MYSQLI_ASSOC);
 	$rowProductQuantity = mysqli_fetch_array($resultProductQuantity, MYSQLI_ASSOC);
-?>
+
+	//Product Report View Default group by product
+	$queryReport = mysqli_query($db, "SELECT product.sku,product.prd_name,product.prd_catg,sum(ledger.amount) as total,
+								sum(ledger.quantity) as quantity,ledger.pid
+								FROM product
+								LEFT JOIN ledger
+								ON product.id=ledger.pid
+								group by ledger.pid;");
+	
+	//Product Report View Default by product id
+	$productSku = base64_decode($_GET['product_sku']);
+	$productId = base64_decode($_GET['product_id']);
+	$queryReportbyProductId = mysqli_query($db, "SELECT product.sku,product.prd_name,ledger.* from product,ledger where ledger.pid='$productId' and product.id = '$productId'");
+	
