@@ -317,10 +317,8 @@ a.toggle-close {
 
 /*Product Filter*/
 .filter-search{
-	background:#F8F8F8;
-	padding-bottom:15px;
-	padding-left:10px;
-	padding-right:10px;
+	background:#fcfcfc;
+	padding:15px;
 }
 .filter-search input[type='text']{
 	border-radius:0;

@@ -98,16 +98,42 @@ if (isset($_POST['productRegistration'])) {
 	
 	$rowProductQuantity = mysqli_fetch_array($resultProductQuantity, MYSQLI_ASSOC);
 	
-	//Product Report View Default group by product
-	$queryReport = mysqli_query($db, "SELECT product.sku,product.prd_name,product.prd_catg,
+	//Product Report View Default - All Products
+	$queryVariable = "SELECT product.sku,product.prd_name,product.prd_catg,
 								sum(ledger.amount) as total,
 								sum(case when services = 'Stock In' then quantity end) as stck,
 								sum(case when services = 'Checkout' then quantity end) as qnt,
 								ledger.pid
 								FROM product
 								LEFT JOIN ledger
-								ON product.id=ledger.pid
-								group by ledger.pid;");
+								ON product.id=ledger.pid";
+	
+   $groupby = " group by ledger.pid";												
+	if (isset($_POST['productFilterSearch'])) {
+					
+		$productName = mysqli_real_escape_string($db,$_POST['search-name']);
+		$productSku = mysqli_real_escape_string($db,$_POST['search-sku']);
+		//$productStock = mysqli_real_escape_string($db, $_POST['search-stock']);
+		$productTaxonomy = mysqli_real_escape_string($db, $_POST['search-taxonomy']);
+		
+		if($productName!=""){
+			$conditionProductName = " and product.prd_name LIKE '%$productName%'";
+			$queryVariable .= $conditionProductName;
+		}
+		if($productSku!=""){
+			$conditionProductSku = " and product.sku='$productSku'";
+			$queryVariable .= $conditionProductSku;
+		}
+		if($productTaxonomy!="Select"){
+			$conditionProductStock = " and product.prd_catg='$productTaxonomy'";
+			$queryVariable .= $productTaxonomy;
+		}
+		$queryReport = mysqli_query($db,$queryVariable.$groupby);
+	}
+	else{
+		$queryReport = mysqli_query($db,$queryVariable.$groupby);
+		
+	}
 	
 	//Product Report View Default by product id
 	$productSku = base64_decode($_GET['product_sku']);
