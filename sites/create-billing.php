@@ -77,9 +77,9 @@ require_once ("layout/primary-nav.php");
 						</div>
 						
 						<div class="panel-body">
-							<form role="form" action="" method="post" id="productBilling">
+							<form role="form" data-toggle="validator" action="" method="post" id="productBilling">
 								<div class="col-md-12">
-								 <label class="control-label">Product Qantity</label>
+								 <label for="inputName" class="control-label">Product Qantity</label>
 									<div class="input-group col-md-2">
 										<span class="input-group-btn">
 											<button type="button" class="btn btn-default btn-number"  data-type="minus" data-field="quant[2]">
@@ -94,15 +94,17 @@ require_once ("layout/primary-nav.php");
 									
 									<div class="form-group">
 										<label class="control-label">Customer Name</label>
-										<input maxlength="100" type="text" required="required" class="form-control" id="customer_name" placeholder="Enter Customer Name"  />
+										<input type="text" required="required" class="form-control" id="customer_name" placeholder="Enter Customer Name"  />
 									</div>
 									<div class="form-group">
 										<label class="control-label">Customer Email</label>
-										<input maxlength="100" type="email" required="required" class="form-control" id="customer_email" placeholder="Enter Customer Email" />
+										<input type="email" pattern="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$" data-error="Email Address must be valid" required="required" class="form-control" id="customer_email" placeholder="Enter Customer Email" />
+										<div class="help-block with-errors"></div>
 									</div>
 									<div class="form-group">
 										<label class="control-label">Customer Phone No.</label>
-										<input maxlength="100" type="text" required="required" class="form-control" id="customer_phone" placeholder="Enter Customer Phone" />
+										<input type="number" data-minlength="10" required="required" class="form-control" id="customer_phone" placeholder="Enter Customer Phone" />
+										<span class="help-block">Phone Number must be 10 digits</span>
 									</div>
 									<div class="form-group">
 										<label class="control-label">Payment Mode</label>
@@ -114,7 +116,7 @@ require_once ("layout/primary-nav.php");
 										</select>
 									</div>
 									<input type="hidden" id="prd_id" value="<?php echo $rowProduct['id'];?>">
-									<button class="btn btn-info nextBtn btn-lg pull-right" id="btnBilling" type="button" >
+									<button class="btn btn-info nextBtn btn-lg pull-right" id="btnBilling" type="submit" >
 										Complete Billing
 									</button>
 								</div>
