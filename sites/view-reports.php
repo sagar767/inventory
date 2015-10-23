@@ -31,7 +31,7 @@ include "db-fetch/query.php";
 							<th>Taxonomy</th>
 							<th>Quantity</th>
 							<th>Amount</th>
-							<th>Details</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>

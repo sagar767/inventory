@@ -314,3 +314,23 @@ a.toggle-close {
 .dashboard-summary .alert span{
 	font-weight:400;
 }
+
+/*Product Filter*/
+.filter-search{
+	background:#F8F8F8;
+	padding-bottom:15px;
+	padding-left:10px;
+	padding-right:10px;
+}
+.filter-search input[type='text']{
+	border-radius:0;
+}
+.filter-search .col-md-12{
+	padding-left:0;
+}
+.filter-search h3{
+	color: #4285F4;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
