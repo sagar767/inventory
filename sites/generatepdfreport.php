@@ -24,7 +24,7 @@ $pdf->Cell(0,20,"Invoice Copy on Purchase",0,1,C);
 $pdf->SetFont('helvetica','',10);
 $pdf->Cell(120,20,"This Invoice copy is given to Mr./Mrs. {$customerName} for buying products",0,1,L);
 
-$pdf->Cell(60,10,"Customer Email-  {$customerEmail}",0,1,R);
+$pdf->Cell(85,10,"Customer Email-  {$customerEmail}",0,1,R);
 $pdf->Cell(60,2,"Customer Phone-  {$customerPhone}",0,1,R);
 
 $pdf->SetFont('helvetica','B',18);
@@ -42,4 +42,15 @@ $pdf->Cell(170,15,"Payment Mode Selected-  {$paymentMode}",0,1,R);
 $pdf->SetFont('Arial','B',12);
 $pdf->Cell(120,50,"Thank You.Visit Again.",0,1,R);
 $pdf->output();
+
+
+/*Mail Send of Billing Info*/
+			$to = "tamaghna@novatree.com";
+			$name = "Invoice Copy to ".$customerName;
+			$from = "inventory@codekeen,org";
+			$contact = $customerPhone;
+			$txt = "Product Quantity\r ". $productQuantity . "\r\n". "Product Total Amount\r". $productBillingAmount;
+			$headers = "From: ".$from. "\r\n" . "CC: sagar767@gmail.com";
+
+			$status = mail($to,$name,$txt,$headers);
 ?>

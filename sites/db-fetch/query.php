@@ -108,7 +108,7 @@ if (isset($_POST['productRegistration'])) {
 								LEFT JOIN ledger
 								ON product.id=ledger.pid";
 	
-   $groupby = " group by ledger.pid";												
+    $groupby = " group by ledger.pid";												
 	if (isset($_POST['productFilterSearch'])) {
 					
 		$productName = mysqli_real_escape_string($db,$_POST['search-name']);

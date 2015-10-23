@@ -15,7 +15,7 @@
      	<form action="" method="post" name="productFilterSearch"> 
       		<div class="filter-search">
 				<div class="col-md-12">
-					<h3>Filter your Search</h3>
+					<h3>Search by Filter</h3>
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control" name="search-name" id="search-name" placeholder="Search Product Name">
