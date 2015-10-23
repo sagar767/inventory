@@ -31,12 +31,12 @@
 					</div>
 				</div-->
 				<div class="form-group">
-						  <select class="form-control" name="search-taxonomy" id="search-taxonomy">
+					<select class="form-control" name="search-taxonomy" id="search-taxonomy">
 						    	<option value="Select">Select Category</option>
 						    	<option value="Home Appliances">Home Appliances</option>
 								<option value="Mobile">Mobile</option>
 								<option value="Grocery">Grocery</option>
-						  </select>
+					</select>
 				</div>
 				<div class="search-action">
 					<input type="submit" class="btn btn-success" name="productFilterSearch" value="Search Details"/>
