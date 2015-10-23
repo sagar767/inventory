@@ -212,10 +212,10 @@ a.toggle-close {
 	padding-top:5px;
 	padding-bottom:5px;
 }
-/*Dealer Registration Form*/
-#dealerRegistration label{
-	font-weight:300;
-	color:#E74C3C;
+/*Registration Form Labels*/
+label{
+	font-weight:400;
+	color:#555555;
 }
 /*Dealer View Details*/
 .view-dealers tr th{

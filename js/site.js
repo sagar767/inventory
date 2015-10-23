@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 
 	/*Product Registration Process Steps*/
 	var navListItems = $('div.setup-panel div a'),
@@ -6,7 +6,6 @@ $(document).ready(function() {
 	    allNextBtn = $('.nextBtn');
 
 	allWells.hide();
-
 	navListItems.click(function(e) {
 		e.preventDefault();
 		var $target = $($(this).attr('href')),
@@ -20,7 +19,6 @@ $(document).ready(function() {
 			$target.find('input:eq(0)').focus();
 		}
 	});
-
 	allNextBtn.click(function() {
 		var curStep = $(this).closest(".setup-content"),
 		    curStepBtn = curStep.attr("id"),
@@ -35,11 +33,9 @@ $(document).ready(function() {
 				$(curInputs[i]).closest(".form-group").addClass("has-error");
 			}
 		}
-
 		if (isValid)
 			nextStepWizard.removeAttr('disabled').trigger('click');
 	});
-
 	$('div.setup-panel div a.btn-danger').trigger('click');
 
 	/*Footer Toggle Close*/
@@ -83,7 +79,6 @@ $(document).ready(function() {
 					}
 				}
 			});
-
 		}
 		return false;
 	});
@@ -114,7 +109,6 @@ $(document).ready(function() {
 	});
 	
 	/*Product Quantity Control for Billing*/
-	
 	$('.btn-number').click(function(e) {
 		e.preventDefault();
 
@@ -157,18 +151,17 @@ $(document).ready(function() {
 
 		name = $(this).attr('name');
 		if (valueCurrent >= minValue) {
-			$(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
+			$(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled');
 		} else {
 			alert('Sorry, the minimum value was reached');
 			$(this).val($(this).data('oldValue'));
 		}
 		if (valueCurrent <= maxValue) {
-			$(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
+			$(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled');
 		} else {
 			alert('Sorry, the maximum value was reached');
 			$(this).val($(this).data('oldValue'));
 		}
-
 	});
 	$(".input-number").keydown(function(e) {
 		// Allow: backspace, delete, tab, escape, enter and .
@@ -217,10 +210,9 @@ $(document).ready(function() {
 					}
 				}
 			});
-
 		}
 		return false;
 	});
-	
+
 });
 

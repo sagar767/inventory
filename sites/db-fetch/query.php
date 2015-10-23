@@ -109,7 +109,8 @@ if (isset($_POST['productRegistration'])) {
 								ON product.id=ledger.pid";
 	
     $groupby = " group by ledger.pid";
-    $orderbyLimit = " order by ledger.pid desc LIMIT 1";											
+    $orderby = " order by ledger.pid desc";	
+	$Limit = " LIMIT 1";										
 	if (isset($_POST['productFilterSearch'])) {
 					
 		$productName = mysqli_real_escape_string($db,$_POST['search-name']);
@@ -119,16 +120,18 @@ if (isset($_POST['productRegistration'])) {
 		if($productName!=""){
 			$conditionProductName = " and product.prd_name LIKE '%$productName%'";
 			$queryVariable .= $conditionProductName;
+			$queryReport = mysqli_query($db,$queryVariable.$groupby.$orderby.$Limit);
 		}
 		if($productSku!=""){
 			$conditionProductSku = " and product.sku='$productSku'";
 			$queryVariable .= $conditionProductSku;
+			$queryReport = mysqli_query($db,$queryVariable.$groupby.$orderby.$Limit);
 		}
 		if($productTaxonomy!="Select"){
 			$conditionProductStock = " and product.prd_catg='$productTaxonomy'";
-			$queryVariable .= $productTaxonomy;
+			$queryVariable .= $conditionProductStock;
+			$queryReport = mysqli_query($db,$queryVariable.$groupby.$orderby);
 		}
-		$queryReport = mysqli_query($db,$queryVariable.$groupby.$orderbyLimit);
 	}
 	else{
 		$queryReport = mysqli_query($db,$queryVariable.$groupby);
