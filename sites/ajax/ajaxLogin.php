@@ -5,7 +5,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	// username and password sent from Form
 	$username = mysqli_real_escape_string($db, $_POST['username']);
 	//Here converting passsword into MD5 encryption.
-	$password = mysqli_real_escape_string($db, $_POST['password']);
+	$password = md5(mysqli_real_escape_string($db, $_POST['password']));
 
 	$result = mysqli_query($db, "SELECT id,username FROM user WHERE username='$username' and password='$password'");
 	$count = mysqli_num_rows($result);
