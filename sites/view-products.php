@@ -11,7 +11,7 @@ include "db-fetch/query.php";
 		?>
 		<div class="col-sm-9">
 			<!-- column 2 -->
-			<h3><i class="glyphicon glyphicon-barcode"></i> Create New Product</h3>
+			<h3><i class="glyphicon glyphicon-barcode"></i> View Product</h3>
 			<hr>
 			<div class="row">
 				<!-- center left-->
