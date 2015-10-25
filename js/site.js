@@ -1,15 +1,29 @@
-$(function() {
+$(document).ready(function() {
+	
+	if ($.cookie('modal-cookies') == null) {
+         $('#cookieModal').modal('show');
+         $.cookie('modal-cookies', { expires: 1 });
+   	}
 
-	//Load Modal on Home Page
-     $('#cookieModal').modal('show');
-
+	/*Footer Toggle Close*/
+	if ($.cookie('toggle-cookies') == null) {
+		$(".toggle-close").click(function(){
+			$(".footer-container").slideToggle("slow");
+		});
+		$.cookie('toggle-cookies',{ expires: 1 });
+	}
+	else{
+			$(".footer-container").hide();
+			console.debug($.cookie('toggle-cookies')); 
+   	}
+	
 	/*Product Registration Process Steps*/
 	var navListItems = $('div.setup-panel div a'),
 	    allWells = $('.setup-content'),
 	    allNextBtn = $('.nextBtn');
 
-	allWells.hide();
-	navListItems.click(function(e) {
+		allWells.hide();
+		navListItems.click(function(e) {
 		e.preventDefault();
 		var $target = $($(this).attr('href')),
 		    $item = $(this);
@@ -41,19 +55,6 @@ $(function() {
 	});
 	$('div.setup-panel div a.btn-danger').trigger('click');
 
-
-	/*Footer Toggle Close*/
-	$(".toggle-close").click(function(){
-		var hit = $(".footer-container").slideToggle("slow");
-		if(hit!=""){
-			/*Saving in Cookies*/
-			$.cookie("visits", hit);
-			console.debug($.cookie("visits"));
-		}
-	});
-	if($.cookie("visits")!=""){
-		$(".footer-container").css("display","none");
-	}
 	
 	/*Product Upload button related*/
 	$.uploadPreview({

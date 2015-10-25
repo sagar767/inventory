@@ -37,10 +37,7 @@ include "db-fetch/query.php";
             <div class="modal-body">
                 <p>You are logged in as <b><?php echo $_SESSION['login_username']; ?></b></p>
                 <p>Please note your preference will be saved during your access across all pages during active</p>
-            	<div class="alert alert-danger">We have implemented cookies on this site.</div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            	<div class="alert alert-danger">This site is using cookies to enhance user experience.</div>
             </div>
         </div>
     </div>
@@ -50,15 +47,12 @@ include "db-fetch/query.php";
 	<!-- upper section -->
 	<div class="row">
 
-		<?php
-		require_once ("layout/sidebar-nav.php");
-		?>
+		<?php require_once ("layout/sidebar-nav.php"); ?>
 
 		<div class="col-sm-9 dashboard">
 
 			<!-- column 2 -->
 			<h3><i class="glyphicon glyphicon-dashboard"></i> Dashboard</h3>
-
 			<hr>
 
 			<div class="row">
