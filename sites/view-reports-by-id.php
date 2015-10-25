@@ -23,54 +23,55 @@ require_once ("layout/primary-nav.php");
 				<p class="alert alert-info">
 					View Individual Product Date Wise.
 				</p>
-				<table class="table table-hover table-responsive">
-					<thead>
-						<tr>
-							<th>Serial</th>
-							<th>Quantity</th>
-							<th>Transaction Type</th>
-							<th>Service Type</th>
-							<th>Date</th>
-							<th>Amount</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php 
-						$i = 1;
-						while ($rowReportbyId = mysqli_fetch_array($queryReportbyProductId,MYSQLI_ASSOC)) {
-						if($rowReportbyId['services']=="Profit"){?>
-						<tr class="alert alert-success">
-							<td><?php echo $i; ?></td>
-							<td><?php echo $rowReportbyId['quantity']; ?></td>
-							<td><?php echo $rowReportbyId['tr_type']; ?></td>
-							<td><?php echo $rowReportbyId['services']; ?></td>
-							<td><?php echo $rowReportbyId['date']; ?></td>
-							<td><?php echo $rowReportbyId['amount']; ?></td>
-						</tr>
-						<?php } else if($rowReportbyId['services']=="Checkout"){?>
-						<tr class="alert alert-warning">
-							<td><?php echo $i; ?></td>
-							<td><?php echo $rowReportbyId['quantity']; ?></td>
-							<td><?php echo $rowReportbyId['tr_type']; ?></td>
-							<td><?php echo $rowReportbyId['services']; ?></td>
-							<td><?php echo $rowReportbyId['date']; ?></td>
-							<td><?php echo $rowReportbyId['amount']; ?></td>
-						</tr>
-						<?php } else{ ?>
-							
-						<tr>
-							<td><?php echo $i; ?></td>
-							<td><?php echo $rowReportbyId['quantity']; ?></td>
-							<td><?php echo $rowReportbyId['tr_type']; ?></td>
-							<td><?php echo $rowReportbyId['services']; ?></td>
-							<td><?php echo $rowReportbyId['date']; ?></td>
-							<td><?php echo $rowReportbyId['amount']; ?></td>
-						</tr>
-							
-						<?php } $i++; } ?>
-					</tbody>
-				</table>
-
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Serial</th>
+								<th>Quantity</th>
+								<th>Transaction Type</th>
+								<th>Service Type</th>
+								<th>Date</th>
+								<th>Amount</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+							$i = 1;
+							while ($rowReportbyId = mysqli_fetch_array($queryReportbyProductId,MYSQLI_ASSOC)) {
+							if($rowReportbyId['services']=="Profit"){?>
+							<tr class="alert alert-success">
+								<td><?php echo $i; ?></td>
+								<td><?php echo $rowReportbyId['quantity']; ?></td>
+								<td><?php echo $rowReportbyId['tr_type']; ?></td>
+								<td><?php echo $rowReportbyId['services']; ?></td>
+								<td><?php echo $rowReportbyId['date']; ?></td>
+								<td><?php echo $rowReportbyId['amount']; ?></td>
+							</tr>
+							<?php } else if($rowReportbyId['services']=="Checkout"){?>
+							<tr class="alert alert-warning">
+								<td><?php echo $i; ?></td>
+								<td><?php echo $rowReportbyId['quantity']; ?></td>
+								<td><?php echo $rowReportbyId['tr_type']; ?></td>
+								<td><?php echo $rowReportbyId['services']; ?></td>
+								<td><?php echo $rowReportbyId['date']; ?></td>
+								<td><?php echo $rowReportbyId['amount']; ?></td>
+							</tr>
+							<?php } else{ ?>
+								
+							<tr>
+								<td><?php echo $i; ?></td>
+								<td><?php echo $rowReportbyId['quantity']; ?></td>
+								<td><?php echo $rowReportbyId['tr_type']; ?></td>
+								<td><?php echo $rowReportbyId['services']; ?></td>
+								<td><?php echo $rowReportbyId['date']; ?></td>
+								<td><?php echo $rowReportbyId['amount']; ?></td>
+							</tr>
+								
+							<?php } $i++; } ?>
+						</tbody>
+					</table>
+				</div>
 			</div><!--/row-->
 		</div><!--/col-span-9-->
 

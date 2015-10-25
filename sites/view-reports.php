@@ -22,58 +22,59 @@ include "db-fetch/query.php";
 				<p class="alert alert-info">
 					Manage Report Details.Use Filter to search particular report.
 				</p>
-				<table class="table table-hover table-responsive">
-					<thead>
-						<tr>
-							<th>Serial</th>
-							<th>Product SKU</th>
-							<th>Product Name</th>
-							<th>Taxonomy</th>
-							<th>Quantity</th>
-							<th>Amount</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php 
-						$i = 1;
-						while ($rowReport = mysqli_fetch_array($queryReport,MYSQLI_ASSOC)) {
-						$totalQuantity = $rowReport['stck'] + $rowReport['qnt']; 
-						if($totalQuantity<=2){?>
-						<tr class="alert alert-danger">
-							<td><?php echo $i; ?></td>
-							<td><?php echo $rowReport['sku']; ?></td>
-							<td><?php echo $rowReport['prd_name']; ?></td>
-							<td><?php echo $rowReport['prd_catg']; ?></td>
-							<td><?php echo $totalQuantity; ?></td>
-							<td><?php echo $rowReport['total']; ?></td>
-							<td>
-								<a href="view-reports-by-id?product_sku=<?php echo base64_encode($rowReport['sku']); ?>&product_id=<?php echo base64_encode($rowReport['pid']); ?>">
-								<i class="fa fa-external-link"></i>
-								</a>
-							</td>
-						</tr>
-						<?php } else {?>
-						<tr>
-							<td><?php echo $i; ?></td>
-							<td><?php echo $rowReport['sku']; ?></td>
-							<td><?php echo $rowReport['prd_name']; ?></td>
-							<td><?php echo $rowReport['prd_catg']; ?></td>
-							<td><?php echo $totalQuantity; ?></td>
-							<td><?php echo $rowReport['total']; ?></td>
-							<td>
-								<a href="view-reports-by-id?product_sku=<?php echo base64_encode($rowReport['sku']); ?>&product_id=<?php echo base64_encode($rowReport['pid']); ?>">
-								<i class="fa fa-external-link"></i>
-								</a>
-							</td>
-						</tr>
-						<?php }
-						$i++; 
-						} 
-						?>
-					</tbody>
-				</table>
-
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Serial</th>
+								<th>Product SKU</th>
+								<th>Product Name</th>
+								<th>Taxonomy</th>
+								<th>Quantity</th>
+								<th>Amount</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+							$i = 1;
+							while ($rowReport = mysqli_fetch_array($queryReport,MYSQLI_ASSOC)) {
+							$totalQuantity = $rowReport['stck'] + $rowReport['qnt']; 
+							if($totalQuantity<=2){?>
+							<tr class="alert alert-danger">
+								<td><?php echo $i; ?></td>
+								<td><?php echo $rowReport['sku']; ?></td>
+								<td><?php echo $rowReport['prd_name']; ?></td>
+								<td><?php echo $rowReport['prd_catg']; ?></td>
+								<td><?php echo $totalQuantity; ?></td>
+								<td><?php echo $rowReport['total']; ?></td>
+								<td>
+									<a href="view-reports-by-id?product_sku=<?php echo base64_encode($rowReport['sku']); ?>&product_id=<?php echo base64_encode($rowReport['pid']); ?>">
+									<i class="fa fa-external-link"></i>
+									</a>
+								</td>
+							</tr>
+							<?php } else {?>
+							<tr>
+								<td><?php echo $i; ?></td>
+								<td><?php echo $rowReport['sku']; ?></td>
+								<td><?php echo $rowReport['prd_name']; ?></td>
+								<td><?php echo $rowReport['prd_catg']; ?></td>
+								<td><?php echo $totalQuantity; ?></td>
+								<td><?php echo $rowReport['total']; ?></td>
+								<td>
+									<a href="view-reports-by-id?product_sku=<?php echo base64_encode($rowReport['sku']); ?>&product_id=<?php echo base64_encode($rowReport['pid']); ?>">
+									<i class="fa fa-external-link"></i>
+									</a>
+								</td>
+							</tr>
+							<?php }
+							$i++; 
+							} 
+							?>
+						</tbody>
+					</table>
+				</div>
 			</div><!--/row-->
 		</div><!--/col-span-9-->
 

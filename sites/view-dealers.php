@@ -22,46 +22,47 @@ include "db-fetch/query.php";
 				<p class="alert alert-success">
 					Manage Dealer Details.Edit or Delete details.
 				</p>
-				<table class="table table-hover table-responsive">
-					<thead>
-						<tr>
-							<th>Serial</th>
-							<th>Dealer Id</th>
-							<th>Dealer Name</th>
-							<th>Company Name</th>
-							<th>Phone No.</th>
-							<th>Email Address</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php 
-						$i = 1;
-						while ($row = mysqli_fetch_array($queryDealerView, MYSQLI_ASSOC)) {
-						?>
-						<tr>
-							<td><?php echo $i; ?></td>
-							<td>DINV<?php echo $row['id']; ?></td>
-							<td><?php echo $row['name']; ?></td>
-							<td><?php echo $row['company']; ?></td>
-							<td><?php echo $row['phone']; ?></td>
-							<td><?php echo $row['email']; ?></td>
-							<td>
-							<a disabled style="color: #E15639; font-size: 1.3em;" href="#" id="<?php echo $row['id']; ?>" class="delete">
-                               <i class="fa fa-trash-o"></i>
-                           </a>
-                           <a style="color: #7388B6; font-size: 1.3em;" href="#">
-                               <i class="fa fa-edit"></i>
-                           </a>
-                           </td>
-						</tr>
-						<?php
-						$i++; 
-						} 
-						?>
-					</tbody>
-				</table>
-
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Serial</th>
+								<th>Dealer Id</th>
+								<th>Dealer Name</th>
+								<th>Company Name</th>
+								<th>Phone No.</th>
+								<th>Email Address</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+							$i = 1;
+							while ($row = mysqli_fetch_array($queryDealerView, MYSQLI_ASSOC)) {
+							?>
+							<tr>
+								<td><?php echo $i; ?></td>
+								<td>DINV<?php echo $row['id']; ?></td>
+								<td><?php echo $row['name']; ?></td>
+								<td><?php echo $row['company']; ?></td>
+								<td><?php echo $row['phone']; ?></td>
+								<td><?php echo $row['email']; ?></td>
+								<td>
+								<a disabled style="color: #E15639; font-size: 1.3em;" href="#" id="<?php echo $row['id']; ?>" class="delete">
+	                               <i class="fa fa-trash-o"></i>
+	                           </a>
+	                           <a style="color: #7388B6; font-size: 1.3em;" href="#">
+	                               <i class="fa fa-edit"></i>
+	                           </a>
+	                           </td>
+							</tr>
+							<?php
+							$i++; 
+							} 
+							?>
+						</tbody>
+					</table>
+				</div>
 			</div><!--/row-->
 		</div><!--/col-span-9-->
 
