@@ -1,5 +1,8 @@
 $(function() {
 
+	//Load Modal on Home Page
+     $('#cookieModal').modal('show');
+
 	/*Product Registration Process Steps*/
 	var navListItems = $('div.setup-panel div a'),
 	    allWells = $('.setup-content'),
@@ -38,11 +41,20 @@ $(function() {
 	});
 	$('div.setup-panel div a.btn-danger').trigger('click');
 
+
 	/*Footer Toggle Close*/
 	$(".toggle-close").click(function(){
-		$(".footer-container").slideToggle("slow");
-		checktimeInterval(count);
+		var hit = $(".footer-container").slideToggle("slow");
+		if(hit!=""){
+			/*Saving in Cookies*/
+			$.cookie("visits", hit);
+			console.debug($.cookie("visits"));
+		}
 	});
+	if($.cookie("visits")!=""){
+		$(".footer-container").css("display","none");
+	}
+	
 	/*Product Upload button related*/
 	$.uploadPreview({
 		input_field : "#image-upload", // Default: .image-upload

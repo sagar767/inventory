@@ -24,6 +24,28 @@ include "db-fetch/query.php";
         });
 </script>
     
+<!-- Modal -->
+<div class="modal fade" id="cookieModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                 <h4 class="modal-title" id="memberModalLabel">Welcome to Inventory</h4>
+
+            </div>
+            <div class="modal-body">
+                <p>You are logged in as <b><?php echo $_SESSION['login_username']; ?></b></p>
+                <p>Please note your preference will be saved during your access across all pages during active</p>
+            	<div class="alert alert-danger">We have implemented cookies on this site.</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
 	<!-- upper section -->
 	<div class="row">

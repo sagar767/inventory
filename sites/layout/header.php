@@ -8,7 +8,6 @@
 		<meta name="description" content="Inventory Managment System - Minor Project on PHP by Tamaghna Banerjee">
   		<link rel="shortcut icon" href="../images/inventory.ico" />
  
-
 	<script src="../js/jquery.min.js" type="text/javascript"></script>
 	<script src="../js/canvasjs.js" type="text/javascript"></script>
 
