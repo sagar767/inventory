@@ -132,7 +132,7 @@
 		$form.find('.login-form-main-message').addClass('show error').html(options['msg-error']);
 	}
 
-//Admin Login using Ajax
+	//Admin Login using Ajax
 	$('#login-button').click(function() {
 		var username = $("#lg_username").val();
 		var password = $("#lg_password").val();
@@ -167,7 +167,7 @@
 	$('#forgot-button').click(function() {
 		var username = $("#lg_username").val();
 		var password = $("#lg_password").val();
-		var current_password = $("#lg_current_password").val();
+		
 		var dataString = 'username=' + username + '&password=' + password;
 		if ($.trim(username).length > 0 && $.trim(password).length > 0) {
 			$.ajax({
@@ -176,18 +176,23 @@
 				data : dataString,
 				cache : false,
 				beforeSend : function() {
-					$("#forgot-button").val('Connecting...');
+					$("#forgot-button").val('Checking...');
 				},
 				success : function(data) {
-					if (data) {
-						var dataString = '&current_password=' + current_password;
-						if ($.trim(username).length > 0 && $.trim(password).length > 0) {
-						}
-					} else {
+				if (data) {
+					
+					$('#forgot-form').slideToggle("fast", function() {
+						    // Animation complete.
+						 });
+					$("#retrieve-form").slideToggle("fast", function() {
+						    // Animation complete.
+						 });
+					
+				} else {
 						//Shake animation effect.
 						$('#main-login-form').shake();
-						$("#forgot-button").val('Checking');
-						$(".login-form-main-message").html("<span>Invalid username and password. ");
+						$("#login-button").val('Login');
+						$(".login-form-main-message").html("<span>Authentication failed!");
 					}
 				}
 			});
@@ -195,15 +200,37 @@
 		}
 		return false;
 	});
-	$("#retrieve-form").hide();
-	$("#forgot-button").click(function(){
-		$('#forgot-form').slideToggle("normal", function() {
-    // Animation complete.
-  });
-		$("#retrieve-form").slideToggle("normal", function() {
-    // Animation complete.
-  });
+
+	//Admin Password Update using Ajax
+	$('#retrieve-button').click(function() {
+		var new_password = $("#lg_new_password").val();
+		var dataString = 'new_password=' + new_password;
+		if ($.trim(new_password).length > 0) {
+			$.ajax({
+				type : "POST",
+				url : "sites/ajax/ajaxPasswordRecovery.php",
+				data : dataString,
+				cache : false,
+				beforeSend : function() {
+					$("#retrieve-button").val('Updating...');
+				},
+				success : function(data) {
+					if (data) {
+						$('#passwordUpdateModal').modal();
+						$("#close").click(function(){
+							window.location.href = "login";
+						});
+					}
+					else{
+						$(".login-form-main-message").html("<span>Can't update password!");
+					}
+				}
+			});
+
+		}
+		return false;
 	});
 
+	$("#retrieve-form").hide();
 
 })(jQuery); 
