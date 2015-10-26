@@ -154,6 +154,39 @@
 						//Shake animation effect.
 						$('#main-login-form').shake();
 						$("#login-button").val('Login');
+						$(".login-form-main-message").html("<span>Authentication failed!");
+					}
+				}
+			});
+
+		}
+		return false;
+	});
+
+	//Admin Forgot Password using Ajax
+	$('#forgot-button').click(function() {
+		var username = $("#lg_username").val();
+		var password = $("#lg_password").val();
+		var current_password = $("#lg_current_password").val();
+		var dataString = 'username=' + username + '&password=' + password;
+		if ($.trim(username).length > 0 && $.trim(password).length > 0) {
+			$.ajax({
+				type : "POST",
+				url : "sites/ajax/ajaxPasswordRecovery.php",
+				data : dataString,
+				cache : false,
+				beforeSend : function() {
+					$("#forgot-button").val('Connecting...');
+				},
+				success : function(data) {
+					if (data) {
+						var dataString = '&current_password=' + current_password;
+						if ($.trim(username).length > 0 && $.trim(password).length > 0) {
+						}
+					} else {
+						//Shake animation effect.
+						$('#main-login-form').shake();
+						$("#forgot-button").val('Checking');
 						$(".login-form-main-message").html("<span>Invalid username and password. ");
 					}
 				}
@@ -162,5 +195,15 @@
 		}
 		return false;
 	});
+	$("#retrieve-form").hide();
+	$("#forgot-button").click(function(){
+		$('#forgot-form').slideToggle("normal", function() {
+    // Animation complete.
+  });
+		$("#retrieve-form").slideToggle("normal", function() {
+    // Animation complete.
+  });
+	});
+
 
 })(jQuery); 

@@ -44,7 +44,7 @@ if (isset($_POST['customerName']) && isset($_POST['productBasePrice']) && isset(
 		$productLedgerQuantity = $productQuantity*-1;
 		$resultBilling = mysqli_query($db, "INSERT INTO billing(id,pid,cus_name,cus_phone,cus_mail,pay_mode,prd_quantity,date,prd_total) values ('','$productId','$customerName', '$customerPhone', '$customerEmail','$paymentMode','$productQuantity','$date','$productTotalBillingAmount')");
 		$resultLedger = mysqli_query($db, "INSERT INTO ledger(id,pid,quantity,tr_type,amount,date,services,user_by) values ('','$productId','$productLedgerQuantity','Outward','$productTotalLedgerAmount','$date','Checkout','$productUserBy')");
-		$resultCommission = mysqli_query($db, "INSERT INTO ledger(id,pid,quantity,tr_type,amount,date,services,user_by) values ('','$productId','$productQuantity','Outward','$productCommissionAmount','$date','Profit','$productUserBy')");
+		$resultCommission = mysqli_query($db, "INSERT INTO ledger(id,pid,quantity,tr_type,amount,date,services,user_by) values ('','$productId','$productLedgerQuantity','Outward','$productCommissionAmount','$date','Profit','$productUserBy')");
 		
 		if (!$resultBilling && !$resultLedger) {
 		die('Could not enter data: ' . mysql_error());
