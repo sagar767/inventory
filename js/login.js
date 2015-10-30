@@ -181,6 +181,7 @@
 				success : function(data) {
 				if (data) {
 					
+					$(".login-form-main-message").hide();
 					$('#forgot-form').slideToggle("fast", function() {
 						    // Animation complete.
 						 });
@@ -231,6 +232,6 @@
 		return false;
 	});
 
-	$("#retrieve-form").hide();
+	//$("#retrieve-form").hide();
 
 })(jQuery); 
