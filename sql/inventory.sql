@@ -88,7 +88,8 @@ CREATE TABLE IF NOT EXISTS `dealer` (
   `company` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `phone` bigint(10) NOT NULL,
-  `email` varchar(100) NOT NULL
+  `email` varchar(100) NOT NULL,
+  `location` varchar(255) NOT NULL,
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --

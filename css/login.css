@@ -282,3 +282,8 @@ label:after, [type="radio"]:checked + label:after {
 label {
 	font-weight: normal;
 }
+
+/*Login Retrieve Form*/
+#retrieve-form{
+	display: none;
+}

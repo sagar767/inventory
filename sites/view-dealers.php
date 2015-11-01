@@ -30,6 +30,7 @@ include "db-fetch/query.php";
 								<th>Dealer Id</th>
 								<th>Dealer Name</th>
 								<th>Company Name</th>
+								<th>Location</th>
 								<th>Phone No.</th>
 								<th>Email Address</th>
 								<th>Action</th>
@@ -45,7 +46,8 @@ include "db-fetch/query.php";
 								<td>DINV<?php echo $row['id']; ?></td>
 								<td><?php echo $row['name']; ?></td>
 								<td><?php echo $row['company']; ?></td>
-								<td><?php echo $row['phone']; ?></td>
+								<td><?php echo $row['location']; ?></td>
+								<td><?php echo $row['phone']; ?></td>								
 								<td><?php echo $row['email']; ?></td>
 								<td>
 								<a disabled style="color: #E15639; font-size: 1.3em;" href="#" id="<?php echo $row['id']; ?>" class="delete">

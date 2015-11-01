@@ -46,6 +46,10 @@ require_once ("layout/primary-nav.php");
 										<input type="email" pattern="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$" required class="form-control" id="dealer_email" data-error="Email Address must be valid" placeholder="Enter Email Address" />
 										<div class="help-block with-errors"></div>
 									</div>
+									<div class="form-group">
+										<label for="inputName" class="control-label">Dealer Location</label>
+										<input type="text" required class="form-control" id="dealer_location" placeholder="Enter Dealer Location" />
+									</div>
 									<button class="btn btn-success nextBtn btn-lg pull-right" id="dealerRegistry" type="submit" >
 										Complete Registration
 									</button>
