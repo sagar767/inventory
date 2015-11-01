@@ -58,16 +58,39 @@ include "db-fetch/query.php";
 	                           </a>
 	                           </td>
 							</tr>
-							<?php
-							$i++; 
-							} 
+							<?php $i++;
+							}
 							?>
 						</tbody>
 					</table>
 				</div>
+				
+				<!-- Render pagination based on messages-->
+      			<div class="pagination-wrap">
+                	<ul class="pagination">
+	                  <?PHP
+						if ($page_counter == 0) {
+							echo "<li><a href=?start='0' class='active'>0</a></li>";
+							for ($j = 1; $j < $paginations; $j++) {
+								echo "<li><a href=?start=$j>" . $j . "</a></li>";
+							}
+						} else {
+							echo "<li><a href=?start=$previous>Previous</a></li>";
+							for ($j = 0; $j < $paginations; $j++) {
+								if ($j == $page_counter) {
+									echo "<li><a href=?start=$j class='active'>" . $j . "</a></li>";
+								} else {
+									echo "<li><a href=?start=$j>" . $j . "</a></li>";
+								}
+							}
+							if ($j != $page_counter + 1)
+								echo "<li><a href=?start=$next>Next</a></li>";
+						}
+	                  ?>
+                	</ul>
+      			</div><!--/Pagination Finished here-->
 			</div><!--/row-->
 		</div><!--/col-span-9-->
-
 	</div>
 </div>
 

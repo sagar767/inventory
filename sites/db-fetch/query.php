@@ -80,9 +80,40 @@ if (isset($_POST['productRegistration'])) {
  	//Product View Page
 	$queryProductView = mysqli_query($db, "SELECT * FROM product ORDER BY id DESC");
 
-	//Dealer View Page
-	$queryDealerView = mysqli_query($db, "SELECT * FROM dealer ORDER BY id DESC");
+	//Dealer View Page with Pagination
+    // Variables for the first page hit
+ 		$start = 0;
+		$page_counter = 0;
+		$per_page = 5;
+		$next = $page_counter + 1;
+		$previous = $page_counter - 1;
 
+		// Check the page location with start value sent by get request and 
+		//change variable values accordingly
+		
+		if (isset($_GET['start'])) {
+			$start = $_GET['start'];
+			$page_counter = $_GET['start'];
+			$start = $start * $per_page;
+			$next = $page_counter + 1;
+			$previous = $page_counter - 1;
+		}
+
+		// query to get messages from messages table
+		$queryDealerView = mysqli_query($db, "SELECT * FROM dealer LIMIT $start, $per_page");
+
+		//placeholder variable to store result
+		$result = null;
+
+		// query to get total number of rows in messages table
+		$count_query = mysqli_query($db, "SELECT * FROM dealer");
+
+		$count = mysqli_num_rows($count_query);
+
+		//calculate number of paginations required based on row count
+		$paginations = ceil($count / $per_page);
+		
+		
 	//Product Billing of specific product(id)
 	$productSku = base64_decode($_GET['product_sku']);
 	$productId = base64_decode($_GET['product_id']);
