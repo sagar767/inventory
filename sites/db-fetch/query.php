@@ -142,7 +142,9 @@ if (isset($_POST['productRegistration'])) {
 	$productSku = base64_decode($_GET['product_sku']);
 	$productId = base64_decode($_GET['product_id']);
 	$queryReportbyProductId = mysqli_query($db, "SELECT product.sku,product.prd_name,ledger.* from product,ledger where ledger.pid='$productId' and product.id = '$productId' order by ledger.date desc");
-	
+	if($productId!="" && $productSku!=""){
+		$updateProductTitle = "Update Registration";
+	}
 	//Dashboard Summary
 	$resultTotalSell = mysqli_query($db, "SELECT sum(amount) as total FROM ledger where tr_type= 'Outward' and services = 'Checkout'");
 	$resultTotalBuyin = mysqli_query($db, "SELECT sum(amount) as total FROM ledger where tr_type= 'Inward' and services = 'Stock In'");
@@ -156,4 +158,12 @@ if (isset($_POST['productRegistration'])) {
 	$rowProfit = mysqli_fetch_array($resultTotalProfit, MYSQLI_ASSOC);
 	$rowCountDealer = mysqli_fetch_array($resultDealerCount, MYSQLI_ASSOC);
 	$rowCountProduct = mysqli_fetch_array($resultProductCount, MYSQLI_ASSOC);
+	
+	/*Dealer Details Update*/
+	$dealer_id = base64_decode($_GET['dealer_id']);
+	if($dealer_id!=""){
+		$updateDealerTitle = "Update Dealer Registration";
+	}
+	$queryDealerUpdate = mysqli_query($db, "SELECT * from dealer where id='$dealer_id'");
+	$rowDealerId = mysqli_fetch_array($queryDealerUpdate, MYSQLI_ASSOC);
 	

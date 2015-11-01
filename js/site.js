@@ -68,12 +68,13 @@ $(document).ready(function() {
 
 	/*Dealer Registration using Ajax*/
 	$('#dealerRegistry').click(function() {
+		var dealerId = $("#dealer_id").val();
 		var companyName = $("#company_name").val();
 		var dealerName  = $("#dealer_name").val();
 		var dealerPhone = $("#dealer_phone").val();
 		var dealerEmail = $("#dealer_email").val();
 		var dealerLocation = $("#dealer_location").val();
-		var dataString  = 'companyName=' + companyName + '&dealerName=' + dealerName + '&dealerPhone=' + dealerPhone + '&dealerEmail=' + dealerEmail+ '&dealerLocation=' + dealerLocation;
+		var dataString  = 'companyName=' + companyName + '&dealerId=' + dealerId + '&dealerName=' + dealerName + '&dealerPhone=' + dealerPhone + '&dealerEmail=' + dealerEmail+ '&dealerLocation=' + dealerLocation;
 		if ($.trim(companyName).length > 0 && $.trim(dealerName).length > 0 && $.trim(dealerPhone).length > 0 && $.trim(dealerEmail).length > 0) {
 			$.ajax({
 				type : "POST",
@@ -85,9 +86,15 @@ $(document).ready(function() {
 				},
 				success : function(data) {
 					if (data) {
-						$("#status").html("<div class='alert alert-success'>New Dealer Registered Successfully</div>");
-						  $("#dealerRegistration input[type=text]").val("");
-						   $("#dealerRegistration input[type=email]").val("");
+						if(dealerId!=""){
+							$("#status").html("<div class='alert alert-success'>Dealer Updated Successfully</div>");;
+						}
+						else{
+							$("#status").html("<div class='alert alert-success'>New Dealer Registered Successfully</div>");
+						  	$("#dealerRegistration input[type=text]").val("");
+						   	$("#dealerRegistration input[type=email]").val("");
+						   	$("#dealerRegistration input[type=phone]").val("");
+						}
 					} else {
 						$("#status").html("<span class='alert alert-danger'>Dealer Registeration Incomplete!</span>");
 					}

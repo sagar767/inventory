@@ -1,7 +1,13 @@
-<?php $title = "Product Registration";
+<?php 
+include "db-fetch/query.php";
+$title = "Product Registration";
+if($updateProductTitle!="")
+	{
+		 $title = $updateProductTitle;	
+	}
 require_once ("layout/header.php");
 require_once ("layout/primary-nav.php");
-include "db-fetch/query.php"
+
 ?>
 
 <div class="container">

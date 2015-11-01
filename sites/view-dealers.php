@@ -53,7 +53,7 @@ include "db-fetch/query.php";
 								<a disabled style="color: #E15639; font-size: 1.3em;" href="#" id="<?php echo $row['id']; ?>" class="delete">
 	                               <i class="fa fa-trash-o"></i>
 	                           </a>
-	                           <a style="color: #7388B6; font-size: 1.3em;" href="#">
+	                           <a style="color: #7388B6; font-size: 1.3em;" href="new-dealer?dealer_id=<?php echo base64_encode($row['id']); ?>">
 	                               <i class="fa fa-edit"></i>
 	                           </a>
 	                           </td>
