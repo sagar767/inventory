@@ -26,7 +26,6 @@ include "db-fetch/query.php";
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th>Serial</th>
 								<th>Dealer Id</th>
 								<th>Dealer Name</th>
 								<th>Company Name</th>
@@ -38,11 +37,10 @@ include "db-fetch/query.php";
 						</thead>
 						<tbody>
 							<?php 
-							$i = 1;
+							//$i = 1;
 							while ($row = mysqli_fetch_array($queryDealerView, MYSQLI_ASSOC)) {
 							?>
 							<tr>
-								<td><?php echo $i; ?></td>
 								<td>DINV<?php echo $row['id']; ?></td>
 								<td><?php echo $row['name']; ?></td>
 								<td><?php echo $row['company']; ?></td>
@@ -58,9 +56,8 @@ include "db-fetch/query.php";
 	                           </a>
 	                           </td>
 							</tr>
-							<?php $i++;
-							}
-							?>
+							<?php //$i++; 
+							} ?>
 						</tbody>
 					</table>
 				</div>

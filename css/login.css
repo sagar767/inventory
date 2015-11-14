@@ -2,7 +2,7 @@
 html, body {
 	background: url("../images/bg.jpg");
 	background-size:cover;
-	padding: 10px;
+	padding: 0;
 	font-family: 'Roboto Condensed' !important;
     font-style: normal;
     font-weight: 300;
@@ -286,4 +286,62 @@ label {
 /*Login Retrieve Form*/
 #retrieve-form{
 	display: none;
+}
+
+
+/*Animated Loading*/
+.wavecover{
+    background-color: #fff;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    z-index: 999;
+    background-size: cover;
+    height: 658px;
+    position: absolute;
+}
+#wavescreen{
+width:380px;
+z-index: 999;
+height:223px;
+position:relative;
+margin: 100px auto;
+background: url(http://sitepointstatic.com/examples/css3/animation/hertz.png);
+-webkit-animation: hertz 4s infinite linear; /* webkit */
+-moz-animation: hertz 4s infinite linear; /* FF */
+-ms-animation: hertz 4s infinite linear; /* IE10 */
+animation: hertz 4s infinite linear; /* w3c */
+}
+#wavescreen:before, #wavescreen:after{
+content:"";
+display:block;
+position:absolute;
+top:0;
+left:-10px;
+width:10px;
+height:223px;
+background: #fff;
+-webkit-box-shadow:0px 0px 10px #fff,0px 0px 10px #fff,0px 0px 20px #fff,0px 0px 20px #fff;
+-moz-box-shadow:0px 0px 10px #fff,0px 0px 10px #fff,0px 0px 20px #fff,0px 0px 20px #fff;
+-ms-box-shadow:0px 0px 10px #fff,0px 0px 10px #fff,0px 0px 20px #fff,0px 0px 20px #fff;
+box-shadow:0px 0px 10px #fff,0px 0px 10px #fff,0px 0px 20px #fff,0px 0px 20px #fff;
+}
+#wavescreen:after{
+left:100%;
+}
+@-webkit-keyframes hertz {
+    0% {background-position:0px 0px;}
+    100% {background-position:-380px 0px;}
+}
+@-moz-keyframes hertz {
+    0% {background-position:0px 0px;}
+    100% {background-position:-380px 0px;}
+}
+@-ms-keyframes hertz {
+    0% {background-position:0px 0px;}
+    100% {background-position:-380px 0px;}
+}
+@keyframes hertz {
+    0% {background-position:0px 0px;}
+    100% {background-position:-380px 0px;}
 }

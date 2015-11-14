@@ -100,7 +100,7 @@ if (isset($_POST['productRegistration'])) {
 		}
 
 		// query to get messages from messages table
-		$queryDealerView = mysqli_query($db, "SELECT * FROM dealer LIMIT $start, $per_page");
+		$queryDealerView = mysqli_query($db, "SELECT * FROM dealer order by id asc LIMIT $start, $per_page");
 
 		//placeholder variable to store result
 		$result = null;

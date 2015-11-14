@@ -1,4 +1,10 @@
 (function($) {
+
+	/*Login Animation*/
+	setTimeout(function () {
+    $(".wavecover").fadeOut("slow")
+}, 4000);
+
 	"use strict";
 
 	// Options for Message

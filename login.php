@@ -24,6 +24,10 @@ header('Location: sites/home');
 }
 ?>
 
+<div class="wavecover">
+	<div id="wavescreen"></div>
+</div>
+
 <!-- LOGIN FORM -->
 <div class="text-center" style="padding:50px 0">
 	<div class="logo">Login Required</div>
