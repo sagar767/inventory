@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$con = mysqli_connect("localhost","root","123","inventory");
+$con = mysqli_connect("localhost","root","personal12345","inventory");
 
  // Check connection
 if (mysqli_connect_errno($con))
